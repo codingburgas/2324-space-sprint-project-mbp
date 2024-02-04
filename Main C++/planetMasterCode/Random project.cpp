@@ -18,7 +18,7 @@ void EmojiWin() {
 			cout << "*";
 		}
 	}
-	for (int i = 0; i < 2; i++) {  //red 4,5,6 i 7 na emojito 
+	for (int i = 0; i < 1; i++) {  //red 4,5,6 i 7 na emojito 
 		cout << endl;
 		cout << "     ";
 		for (int i = 0; i < 17; i++) {
@@ -32,9 +32,12 @@ void EmojiWin() {
 		}
 	}
 	cout << endl;
-	cout << "      *  Planet master *" ;
-	for (int i = 0; i < 3; i++) {  //red 4,5,6 i 7 na emojito 
-		cout << endl;
+	cout << "      *  Planet master *" << endl;
+	cout << "      *  _____________ *" << endl;
+	cout << "      *  1. Next Level *" << endl;
+	cout << "      *     2. Back    *" << endl;
+	cout << "      *     3. Quit    *" << endl;
+	for (int i = 0; i < 1; i++) {  //red 4,5,6 i 7 na emojito 
 		cout << "     ";
 		for (int i = 0; i < 17; i++) {
 			cout << " ";
@@ -46,22 +49,19 @@ void EmojiWin() {
 			}
 		}
 	}
-		cout << endl;
-		cout << "      ";//red 8 na emojito
-		for (int i = 0; i < 15; i++) {
-			cout << " ";
-			if (i == 0) {
-				cout << "*";
-			}
-			else if (i == 14) {
-				cout << "*";
-			}
-		}
-		cout << endl;
-		cout << "        ";//red 9 na emojito
-		for (int i = 0; i < 14; i++) {
+	cout << endl;
+	cout << "      ";  //red 2 na emojito
+	for (int i = 0; i < 15; i++) {
+		cout << " ";
+		if (i == 0) {
 			cout << "*";
 		}
+		else if (i == 14) {
+			cout << "*";
+		}
+	}
+	cout << endl;
+	cout << "        **************" << endl;
 }
 
 void EmojiLose(){
@@ -264,7 +264,7 @@ void Sistema1(int n) {
 		cout << "Put the planets in the correct order to gain access to the next level!" << endl;
 		cout << "Level 1: Our solar system!" << endl;
 		cout << "List of Planets:" << endl;
-		cout << "1.Mars" << endl << "2.Mercury" << endl << "3.Neptune" << endl << "4.Uranus" << endl << "5.Venerus" << endl;
+		cout << "1.Mars " << endl << "2.Mercury" << endl << "3.Neptune" << endl << "4.Uranus" << endl << "5.Venerus" << endl;
 		cout << "6.Jupiter" << endl << "7.Saturn" << endl<<"8.Earth"<<endl;
 		cout << endl;
 		
