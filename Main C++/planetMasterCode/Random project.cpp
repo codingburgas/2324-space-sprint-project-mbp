@@ -64,40 +64,19 @@ void EmojiWin() {
 	cout << "        **************" << endl;
 }
 
-void EmojiLose(){
-	cout << endl;
-	cout << "        ";  //red 1 na emojito
-	for (int i = 0; i < 14; i++) {
-		cout << "*";
-	}
-	cout << endl;
-	cout << "      ";  //red 2 na emojito
-	for (int i = 0; i < 15; i++) {
-		cout << " ";
-		if (i == 0) {
-			cout << "*";
-		}
-		else if (i == 14) {
-			cout << "*";
-		}
-	}
-	for (int i = 0; i < 2; i++) {  //red 4,5,6 i 7 na emojito 
-		cout << endl;
-		cout << "     ";
-		for (int i = 0; i < 17; i++) {
-			cout << " ";
-			if (i == 0) {
-				cout << "*";
-			}
-			else if (i == 16) {
-				cout << "*";
-			}
-		}
-	}
-	cout << endl;
-	cout << "      *  Planet loser  *";
-	for (int i = 0; i < 3; i++) {  //red 4,5,6 i 7 na emojito 
-		cout << endl;
+void EmojiLose() {
+	cout << endl << endl << endl;
+	cout << "       ***************" << endl;
+	cout << "      ********      *   " << endl;
+	cout << "       *        *    " << endl;
+	cout << "           *    *******" << endl;
+	cout << "      ***********      *" << endl;
+	cout << "      *  Planet loser  *" << endl;
+	cout << "      *  ____________  *" << endl;
+	cout << "      *  1. Try again  *" << endl;
+	cout << "      *     2. Back    *" << endl;
+	cout << "      *     3. Quit    *" << endl;
+	for (int i = 0; i < 1; i++) {  //red 4,5,6 i 7 na emojito 
 		cout << "     ";
 		for (int i = 0; i < 17; i++) {
 			cout << " ";
@@ -154,12 +133,12 @@ void SunSizeS() {
 			cout << "*";
 		}
 	}
-	
+
 	cout << "     ";
 	for (int i = 0; i < 7; i++) {  //red 4,5,6 i 7 na slunceto
 		cout << endl;
 		cout << "     ";
-		for (int i = 0; i <23; i++) {
+		for (int i = 0; i < 23; i++) {
 			cout << " ";
 			if (i == 0) {
 				cout << "*";
@@ -171,7 +150,7 @@ void SunSizeS() {
 	}
 	cout << endl;
 	cout << "      ";//red 8 na slunceto
-	for (int i = 0; i <23; i++) {
+	for (int i = 0; i < 23; i++) {
 		cout << " ";
 		if (i == 0) {
 			cout << "*";
@@ -265,18 +244,18 @@ void Sistema1(int n) {
 		cout << "Level 1: Our solar system!" << endl;
 		cout << "List of Planets:" << endl;
 		cout << "1.Mars " << endl << "2.Mercury" << endl << "3.Neptune" << endl << "4.Uranus" << endl << "5.Venerus" << endl;
-		cout << "6.Jupiter" << endl << "7.Saturn" << endl<<"8.Earth"<<endl;
+		cout << "6.Jupiter" << endl << "7.Saturn" << endl << "8.Earth" << endl;
 		cout << endl;
-		
+
 		SunSizeS();
 		cout << endl << endl;
-		int a,b,c,d,e,f,g,h;
-		cin >> a >> b >> c >> d >> e >> f >> g >>h;
+		int a, b, c, d, e, f, g, h;
+		cin >> a >> b >> c >> d >> e >> f >> g >> h;
 		SunSizeS();
-		cout << endl << endl<<endl << endl << endl << endl << endl;
+		cout << endl << endl << endl << endl << endl << endl << endl;
 		SmallPlanet(a);
-		
-		if (AnswerLVL1(a,b,c,d,e,f,g,h)==0) {
+
+		if (AnswerLVL1(a, b, c, d, e, f, g, h) == 0) {
 			cout << endl;
 			cout << "Wrong answer! Try again!";
 			EmojiLose();
@@ -285,7 +264,7 @@ void Sistema1(int n) {
 		else {
 			cout << endl;
 			cout << "Congrats! You may go to the next level!" << endl << endl;
-			EmojiWin(); 
+			EmojiWin();
 		}
 	}
 	else {
