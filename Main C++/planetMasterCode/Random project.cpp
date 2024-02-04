@@ -316,13 +316,13 @@ int main()
 	cout << endl;
 	cout << "_____________" << endl;
 	cout << "|  1. Play  |" << endl;
-	cout << "_____________" << endl;
+	cout << "*************" << endl;
 	cout << "_____________" << endl;
 	cout << "|2. Settings|" << endl;
-	cout << "_____________" << endl;
+	cout << "*************" << endl;
 	cout << "_____________" << endl;
 	cout << "| 3. Credits|" << endl;
-	cout << "_____________" << endl;
+	cout << "*************" << endl;
 	cout << "Choose what would you like to do by typing the corresponding number!" << endl;
 	cin >> userChoice;
 	while (isChosenSuccessfullyMainMenu == false)
@@ -332,52 +332,13 @@ int main()
 			isChosenSuccessfullyMainMenu = true;
 			while (isChosenSuccessfullyPlay == false)
 			{
+				cout << endl;
 				cout << "Enter the number of the desired level!" << endl;
 				cin >> level;
-				switch (level)
-				{
-				case 1:
-					Sistema1(level);
-					isChosenSuccessfullyPlay = true;
-					break;
-				case 2:
-					Sistema1(level);
-					isChosenSuccessfullyPlay = true;
-					break;
-				case 3:
-					Sistema1(level);
-					isChosenSuccessfullyPlay = true;
-					break;
-				case 4:
-					Sistema1(level);
-					isChosenSuccessfullyPlay = true;
-					break;
-				case 5:
-					Sistema1(level);
-					isChosenSuccessfullyPlay = true;
-					break;
-				case 6:
-					Sistema1(level);
-					isChosenSuccessfullyPlay = true;
-					break;
-				case 7:
-					Sistema1(level);
-					isChosenSuccessfullyPlay = true;
-					break;
-				case 8:
-					Sistema1(level);
-					isChosenSuccessfullyPlay = true;
-					break;
-				case 9:
-					Sistema1(level);
-					isChosenSuccessfullyPlay = true;
-					break;
-				case 10:
-					Sistema1(level);
-					isChosenSuccessfullyPlay = true;
-					break;
-				default:
-					cout << "Please enter a valid level!" << endl;
+				Sistema1(level);
+				Sistema2(level);
+				if (level < 1 || level>10) {
+					cout << "Enter a number between 1 and 10!" << endl;
 				}
 			}
 		}
