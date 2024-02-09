@@ -2,109 +2,11 @@
 #include<iomanip>
 using namespace std;
 
-void EmojiWin() {
-	cout << "        ";  //red 1 na emojito
-	for (int i = 0; i < 14; i++) {
-		cout << "*";
-	}
-	cout << endl;
-	cout << "      ";  //red 2 na emojito
-	for (int i = 0; i < 15; i++) {
-		cout << " ";
-		if (i == 0) {
-			cout << "*";
-		}
-		else if (i == 14) {
-			cout << "*";
-		}
-	}
-	for (int i = 0; i < 1; i++) {  //red 4,5,6 i 7 na emojito 
-		cout << endl;
-		cout << "     ";
-		for (int i = 0; i < 17; i++) {
-			cout << " ";
-			if (i == 0) {
-				cout << "*";
-			}
-			else if (i == 16) {
-				cout << "*";
-			}
-		}
-	}
-	cout << endl;
-	cout << "      *  Planet master *" << endl;
-	cout << "      *  _____________ *" << endl;
-	cout << "      *  1. Next Level *" << endl;
-	cout << "      *     2. Back    *" << endl;
-	cout << "      *     3. Quit    *" << endl;
-	for (int i = 0; i < 1; i++) {  //red 4,5,6 i 7 na emojito 
-		cout << "     ";
-		for (int i = 0; i < 17; i++) {
-			cout << " ";
-			if (i == 0) {
-				cout << "*";
-			}
-			else if (i == 16) {
-				cout << "*";
-			}
-		}
-	}
-	cout << endl;
-	cout << "      ";  //red 2 na emojito
-	for (int i = 0; i < 15; i++) {
-		cout << " ";
-		if (i == 0) {
-			cout << "*";
-		}
-		else if (i == 14) {
-			cout << "*";
-		}
-	}
-	cout << endl;
-	cout << "        **************" << endl;
-}
+int level;
 
-void EmojiLose() {
-	cout << endl << endl << endl;
-	cout << "       ***************" << endl;
-	cout << "      ********      *   " << endl;
-	cout << "       *        *    " << endl;
-	cout << "           *    *******" << endl;
-	cout << "      ***********      *" << endl;
-	cout << "      *  Planet loser  *" << endl;
-	cout << "      *  ____________  *" << endl;
-	cout << "      *  1. Try again  *" << endl;
-	cout << "      *     2. Back    *" << endl;
-	cout << "      *     3. Quit    *" << endl;
-	for (int i = 0; i < 1; i++) {  //red 4,5,6 i 7 na emojito 
-		cout << "     ";
-		for (int i = 0; i < 17; i++) {
-			cout << " ";
-			if (i == 0) {
-				cout << "*";
-			}
-			else if (i == 16) {
-				cout << "*";
-			}
-		}
-	}
-	cout << endl;
-	cout << "      ";//red 8 na emojito
-	for (int i = 0; i < 15; i++) {
-		cout << " ";
-		if (i == 0) {
-			cout << "*";
-		}
-		else if (i == 14) {
-			cout << "*";
-		}
-	}
-	cout << endl;
-	cout << "        ";//red 9 na emojito
-	for (int i = 0; i < 14; i++) {
-		cout << "*";
-	}
-}
+void winScreen();
+
+void loseScreen();
 
 void SunSizeS() {
 	cout << "        ";  //red 1 na emojito
@@ -237,7 +139,7 @@ bool AnswerLVL1(int a, int b, int c, int d, int e, int f, int g, int h) {
 	}
 }
 
-void Sistema1(int n) {
+void level1(int n) {
 	if (n == 1) {
 
 		cout << "Put the planets in the correct order to gain access to the next level!" << endl;
@@ -258,20 +160,20 @@ void Sistema1(int n) {
 		if (AnswerLVL1(a, b, c, d, e, f, g, h) == 0) {
 			cout << endl;
 			cout << "Wrong answer! Try again!";
-			EmojiLose();
+			loseScreen();
 			return;
 		}
 		else {
 			cout << endl;
 			cout << "Congrats! You may go to the next level!" << endl << endl;
-			EmojiWin();
+			winScreen();
 		}
 	}
 	else {
 		return;
 	}
 }
-void Sistema2(int n) {
+void level2(int n) {
 	if (n == 2) {
 		cout << "Put the planets in the correct order to gain access to the next level!" << endl;
 		cout << "Level 2: Our solar system!" << endl;
@@ -282,12 +184,150 @@ void Sistema2(int n) {
 	else {
 		return;
 	}
+
 }
+
+void chooseLevel(int level)
+{
+	level1(level);
+	level2(level);
+}
+
+
+void winScreen() {
+	int userChoice;
+	bool isChosenSuccessfullyMainMenu = false;
+	bool isChosenSuccessfullyPlay = false;
+
+	cout << "        ";  //red 1 na emojito
+	for (int i = 0; i < 14; i++) {
+		cout << "*";
+	}
+	cout << endl;
+	cout << "      ";  //red 2 na emojito
+	for (int i = 0; i < 15; i++) {
+		cout << " ";
+		if (i == 0) {
+			cout << "*";
+		}
+		else if (i == 14) {
+			cout << "*";
+		}
+	}
+	for (int i = 0; i < 1; i++) {  //red 4,5,6 i 7 na emojito 
+		cout << endl;
+		cout << "     ";
+		for (int i = 0; i < 17; i++) {
+			cout << " ";
+			if (i == 0) {
+				cout << "*";
+			}
+			else if (i == 16) {
+				cout << "*";
+			}
+		}
+	}
+	cout << endl;
+	cout << "      *  Planet master *" << endl;
+	cout << "      *  _____________ *" << endl;
+	cout << "      *  1. Next Level *" << endl;
+	cout << "      *     2. Back    *" << endl;
+	cout << "      *     3. Quit    *" << endl;
+	for (int i = 0; i < 1; i++) {  //red 4,5,6 i 7 na emojito 
+		cout << "     ";
+		for (int i = 0; i < 17; i++) {
+			cout << " ";
+			if (i == 0) {
+				cout << "*";
+			}
+			else if (i == 16) {
+				cout << "*";
+			}
+		}
+	}
+	cout << endl;
+	cout << "      ";  //red 2 na emojito
+	for (int i = 0; i < 15; i++) {
+		cout << " ";
+		if (i == 0) {
+			cout << "*";
+		}
+		else if (i == 14) {
+			cout << "*";
+		}
+	}
+	cout << endl;
+	cout << "        **************" << endl;
+
+	cin >> userChoice;
+	while (isChosenSuccessfullyMainMenu == false)
+	{
+		if (userChoice == 1)
+		{
+			level++;
+			chooseLevel(level);
+		}
+		else if (userChoice == 2)
+		{
+			isChosenSuccessfullyMainMenu = true;
+		}
+		else if (userChoice == 3)
+		{
+			isChosenSuccessfullyMainMenu = true;
+		}
+		else
+		{
+			cout << "Please enter a valid action!" << endl;
+		}
+	}
+}
+
+void loseScreen() {
+	cout << endl << endl << endl;
+	cout << "       ***************" << endl;
+	cout << "      ********      *   " << endl;
+	cout << "       *        *    " << endl;
+	cout << "           *    *******" << endl;
+	cout << "      ***********      *" << endl;
+	cout << "      *  Planet loser  *" << endl;
+	cout << "      *  ____________  *" << endl;
+	cout << "      *  1. Try again  *" << endl;
+	cout << "      *     2. Back    *" << endl;
+	cout << "      *     3. Quit    *" << endl;
+	for (int i = 0; i < 1; i++) {  //red 4,5,6 i 7 na emojito 
+		cout << "     ";
+		for (int i = 0; i < 17; i++) {
+			cout << " ";
+			if (i == 0) {
+				cout << "*";
+			}
+			else if (i == 16) {
+				cout << "*";
+			}
+		}
+	}
+	cout << endl;
+	cout << "      ";//red 8 na emojito
+	for (int i = 0; i < 15; i++) {
+		cout << " ";
+		if (i == 0) {
+			cout << "*";
+		}
+		else if (i == 14) {
+			cout << "*";
+		}
+	}
+	cout << endl;
+	cout << "        ";//red 9 na emojito
+	for (int i = 0; i < 14; i++) {
+		cout << "*";
+	}
+}
+
 
 int main()
 {
 	int userChoice;
-	int level;
 	bool isChosenSuccessfullyMainMenu = false;
 	bool isChosenSuccessfullyPlay = false;
 	cout << "PLANET MASTER" << endl;
@@ -314,8 +354,7 @@ int main()
 				cout << endl;
 				cout << "Enter the number of the desired level!" << endl;
 				cin >> level;
-				Sistema1(level);
-				Sistema2(level);
+				chooseLevel(level);
 				if (level < 1 || level>10) {
 					cout << "Enter a number between 1 and 10!" << endl;
 				}
