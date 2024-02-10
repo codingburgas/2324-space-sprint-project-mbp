@@ -329,7 +329,7 @@ void winScreen() {
 		}
 		else if (userChoice == 3)
 		{
-			isChosenSuccessfullyMainMenu = true;
+			exit(0);
 		}
 		else
 		{
@@ -402,7 +402,7 @@ void loseScreen() {
 		}
 		else if (userChoice == 3)
 		{
-			isChosenSuccessfullyMainMenu = true;
+			exit(0);
 		}
 		else
 		{
