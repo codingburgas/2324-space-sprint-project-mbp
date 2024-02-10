@@ -257,8 +257,9 @@ void winScreen() {
 		}
 	}
 	cout << endl;
-	cout << "        **************" << endl;
+	cout << "        **************" << endl << endl;
 
+	cout << "Choose what would you like to do by typing the corresponding number!" << endl;
 	cin >> userChoice;
 	while (isChosenSuccessfullyMainMenu == false)
 	{
@@ -283,6 +284,10 @@ void winScreen() {
 }
 
 void loseScreen() {
+	int userChoice;
+	bool isChosenSuccessfullyMainMenu = false;
+	bool isChosenSuccessfullyPlay = false;
+
 	cout << endl << endl << endl;
 	cout << "       ***************" << endl;
 	cout << "      ********      *   " << endl;
@@ -321,6 +326,29 @@ void loseScreen() {
 	cout << "        ";//red 9 na emojito
 	for (int i = 0; i < 14; i++) {
 		cout << "*";
+	}
+	cout << endl << endl;
+
+	cout << "Choose what would you like to do by typing the corresponding number!" << endl;
+	cin >> userChoice;
+	while (isChosenSuccessfullyMainMenu == false)
+	{
+		if (userChoice == 1)
+		{
+			chooseLevel(level);
+		}
+		else if (userChoice == 2)
+		{
+			isChosenSuccessfullyMainMenu = true;
+		}
+		else if (userChoice == 3)
+		{
+			isChosenSuccessfullyMainMenu = true;
+		}
+		else
+		{
+			cout << "Please enter a valid action!" << endl;
+		}
 	}
 }
 
