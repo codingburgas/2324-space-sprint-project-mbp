@@ -193,6 +193,59 @@ void chooseLevel(int level)
 	level2(level);
 }
 
+void mainMenu()
+{
+	int userChoice;
+	bool isChosenSuccessfullyMainMenu = false;
+	bool isChosenSuccessfullyPlay = false;
+	cout << "PLANET MASTER" << endl;
+	cout << "_____________" << endl;
+	cout << endl;
+	cout << "_____________" << endl;
+	cout << "|  1. Play  |" << endl;
+	cout << "*************" << endl;
+	cout << "_____________" << endl;
+	cout << "|2. Settings|" << endl;
+	cout << "*************" << endl;
+	cout << "_____________" << endl;
+	cout << "| 3. Credits|" << endl;
+	cout << "*************" << endl;
+	cout << "Choose what would you like to do by typing the corresponding number!" << endl;
+	cin >> userChoice;
+	cout << endl;
+
+	while (isChosenSuccessfullyMainMenu == false)
+	{
+		if (userChoice == 1)
+		{
+			isChosenSuccessfullyMainMenu = true;
+			while (isChosenSuccessfullyPlay == false)
+			{
+				cout << endl;
+				cout << "Enter the number of the desired level!" << endl;
+				cin >> level;
+				chooseLevel(level);
+				if (level < 1 || level>10) {
+					cout << "Enter a number between 1 and 10!" << endl;
+				}
+			}
+		}
+		else if (userChoice == 2)
+		{
+			isChosenSuccessfullyMainMenu = true;
+		}
+		else if (userChoice == 3)
+		{
+			isChosenSuccessfullyMainMenu = true;
+		}
+		else
+		{
+			cout << "Please enter a valid action!" << endl;
+			cin >> userChoice;
+			cout << endl;
+		}
+	}
+}
 
 void winScreen() {
 	int userChoice;
@@ -261,6 +314,8 @@ void winScreen() {
 
 	cout << "Choose what would you like to do by typing the corresponding number!" << endl;
 	cin >> userChoice;
+	cout << endl;
+
 	while (isChosenSuccessfullyMainMenu == false)
 	{
 		if (userChoice == 1)
@@ -270,7 +325,7 @@ void winScreen() {
 		}
 		else if (userChoice == 2)
 		{
-			isChosenSuccessfullyMainMenu = true;
+			mainMenu();
 		}
 		else if (userChoice == 3)
 		{
@@ -279,6 +334,8 @@ void winScreen() {
 		else
 		{
 			cout << "Please enter a valid action!" << endl;
+			cin >> userChoice;
+			cout<<endl;
 		}
 	}
 }
@@ -331,6 +388,8 @@ void loseScreen() {
 
 	cout << "Choose what would you like to do by typing the corresponding number!" << endl;
 	cin >> userChoice;
+	cout << endl;
+
 	while (isChosenSuccessfullyMainMenu == false)
 	{
 		if (userChoice == 1)
@@ -339,7 +398,7 @@ void loseScreen() {
 		}
 		else if (userChoice == 2)
 		{
-			isChosenSuccessfullyMainMenu = true;
+			mainMenu();
 		}
 		else if (userChoice == 3)
 		{
@@ -348,6 +407,7 @@ void loseScreen() {
 		else
 		{
 			cout << "Please enter a valid action!" << endl;
+			cin >> userChoice;
 		}
 	}
 }
@@ -355,50 +415,5 @@ void loseScreen() {
 
 int main()
 {
-	int userChoice;
-	bool isChosenSuccessfullyMainMenu = false;
-	bool isChosenSuccessfullyPlay = false;
-	cout << "PLANET MASTER" << endl;
-	cout << "_____________" << endl;
-	cout << endl;
-	cout << "_____________" << endl;
-	cout << "|  1. Play  |" << endl;
-	cout << "*************" << endl;
-	cout << "_____________" << endl;
-	cout << "|2. Settings|" << endl;
-	cout << "*************" << endl;
-	cout << "_____________" << endl;
-	cout << "| 3. Credits|" << endl;
-	cout << "*************" << endl;
-	cout << "Choose what would you like to do by typing the corresponding number!" << endl;
-	cin >> userChoice;
-	while (isChosenSuccessfullyMainMenu == false)
-	{
-		if (userChoice == 1)
-		{
-			isChosenSuccessfullyMainMenu = true;
-			while (isChosenSuccessfullyPlay == false)
-			{
-				cout << endl;
-				cout << "Enter the number of the desired level!" << endl;
-				cin >> level;
-				chooseLevel(level);
-				if (level < 1 || level>10) {
-					cout << "Enter a number between 1 and 10!" << endl;
-				}
-			}
-		}
-		else if (userChoice == 2)
-		{
-			isChosenSuccessfullyMainMenu = true;
-		}
-		else if (userChoice == 3)
-		{
-			isChosenSuccessfullyMainMenu = true;
-		}
-		else
-		{
-			cout << "Please enter a valid action!" << endl;
-		}
-	}
+	mainMenu();
 }
