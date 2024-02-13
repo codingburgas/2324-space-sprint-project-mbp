@@ -4,6 +4,50 @@ using namespace std;
 
 int level;
 
+void gameModeMenuLine()
+{
+	for (int i = 1; i < 30; i++)
+	{
+		cout << "-";
+	}
+	cout << endl;
+}
+void gameModesMenu()
+{
+	gameModeMenuLine();
+	cout << "PLANET MASTER" << endl;
+	gameModeMenuLine();
+	cout << endl;
+	cout << "1.Planet ordering" << endl;
+	gameModeMenuLine();
+	cout << " _______ " << setw(5) << " _______ " << setw(5) << " _______   |" << endl;
+	cout << "| LEVEL |" << setw(5) << "| LEVEL |" << setw(5) << "| LEVEL |  |" << endl;
+	cout << "|   1   |" << setw(5) << "|   2   |" << setw(5) << "|   3   |  |" << endl;
+	cout << "|       |" << setw(5) << "|       |" << setw(5) << "|       |  |" << endl;
+	cout << " ******* " << setw(5) << " ******* " << setw(5) << " *******   |" << endl;
+	gameModeMenuLine();
+	cout << endl;
+	cout << "2.Habitat finder" << endl;
+	gameModeMenuLine();
+	cout << " _______ " << setw(5) << " _______ " << setw(5) << " _______   |" << endl;
+	cout << "| LEVEL |" << setw(5) << "| LEVEL |" << setw(5) << "| LEVEL |  |" << endl;
+	cout << "|   1   |" << setw(5) << "|   2   |" << setw(5) << "|   3   |  |" << endl;
+	cout << "|       |" << setw(5) << "|       |" << setw(5) << "|       |  |" << endl;
+	cout << " ******* " << setw(5) << " ******* " << setw(5) << " *******   |" << endl;
+	gameModeMenuLine();
+	cout << endl;
+	cout << "3.Planet expert" << endl;
+	gameModeMenuLine();
+	cout << " _______ " << setw(5) << " _______ " << setw(5) << " _______   |" << endl;
+	cout << "| LEVEL |" << setw(5) << "| LEVEL |" << setw(5) << "| LEVEL |  |" << endl;
+	cout << "|   1   |" << setw(5) << "|   2   |" << setw(5) << "|   3   |  |" << endl;
+	cout << "|       |" << setw(5) << "|       |" << setw(5) << "|       |  |" << endl;
+	cout << " ******* " << setw(5) << " ******* " << setw(5) << " *******   |" << endl;
+	gameModeMenuLine();
+	cout << "4.Back" << endl;
+	gameModeMenuLine();
+}
+
 void winScreen();
 
 void loseScreen();
@@ -176,10 +220,10 @@ void level1(int n) {
 void level2(int n) {
 	if (n == 2) {
 		cout << "Put the planets in the correct order to gain access to the next level!" << endl;
-		cout << "Level 2: Our solar system!" << endl;
+		cout << "Level 2: Chronos!" << endl;
 		cout << "List of Planets:" << endl;
-		cout << "1.Mars" << endl << "2.Mercury" << endl << "3.Neptune" << endl << "4.Uranus" << endl << "5.Venerus" << endl;
-		cout << "6.Jupiter" << endl << "7.Saturn";
+		cout << "1.Elysium" << endl << "2.Celestia" << endl << "3.Nyx" << endl << "4.Verdantia" << endl << "5.Aetherius" << endl;
+		cout << "6.Aether" << endl << "7.Chronos Secundus" << endl << "8.Aurora" << endl;
 	}
 	else {
 		return;
@@ -221,6 +265,7 @@ void mainMenu()
 			isChosenSuccessfullyMainMenu = true;
 			while (isChosenSuccessfullyPlay == false)
 			{
+				gameModesMenu();
 				cout << endl;
 				cout << "Enter the number of the desired level!" << endl;
 				cin >> level;
