@@ -4,6 +4,10 @@ using namespace std;
 
 int level;
 
+void mainMenu();
+
+void chooseLevel(int level);
+
 void gameModeMenuLine()
 {
 	for (int i = 1; i < 30; i++)
@@ -14,6 +18,10 @@ void gameModeMenuLine()
 }
 void gameModesMenu()
 {
+	int userChoice;
+	bool isChosenSuccessfullyGameMode = false;
+	bool isChosenSuccessfullyLevel = false;
+
 	gameModeMenuLine();
 	cout << "PLANET MASTER" << endl;
 	gameModeMenuLine();
@@ -46,6 +54,48 @@ void gameModesMenu()
 	gameModeMenuLine();
 	cout << "4.Back" << endl;
 	gameModeMenuLine();
+
+	cout << "Choose the game mode you would like to play by typing the corresponding number!" << endl;
+	cin >> userChoice;
+	cout << endl;
+
+	while (isChosenSuccessfullyGameMode == false)
+	{
+		if (userChoice == 1)
+		{
+			isChosenSuccessfullyGameMode = true;
+			while (isChosenSuccessfullyLevel == false)
+			{
+				cout << endl;
+				cout << "Enter the number of the desired level!" << endl;
+				cin >> level;
+				chooseLevel(level);
+				if (level < 1 || level>10) {
+					cout << "Enter a number between 1 and 10!" << endl;
+				}
+			}
+		}
+		else if (userChoice == 2)
+		{
+			isChosenSuccessfullyGameMode = true;
+		}
+		else if (userChoice == 3)
+		{
+			isChosenSuccessfullyGameMode = true;
+		}
+		else if (userChoice == 4)
+		{
+			isChosenSuccessfullyGameMode = true;
+			mainMenu();
+
+		}
+		else
+		{
+			cout << "Please enter a valid action!" << endl;
+			cin >> userChoice;
+			cout << endl;
+		}
+	}
 }
 
 void winScreen();
