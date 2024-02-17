@@ -3,6 +3,7 @@
 using namespace std;
 
 int level;
+int userChoiceGameModes;
 
 void mainMenu();
 
@@ -18,7 +19,6 @@ void gameModeMenuLine()
 }
 void gameModesMenu()
 {
-	int userChoice;
 	bool isChosenSuccessfullyGameMode = false;
 	bool isChosenSuccessfullyLevel = false;
 
@@ -56,12 +56,12 @@ void gameModesMenu()
 	gameModeMenuLine();
 
 	cout << "Choose the game mode you would like to play by typing the corresponding number!" << endl;
-	cin >> userChoice;
+	cin >> userChoiceGameModes;
 	cout << endl;
 
 	while (isChosenSuccessfullyGameMode == false)
 	{
-		if (userChoice == 1)
+		if (userChoiceGameModes == 1)
 		{
 			isChosenSuccessfullyGameMode = true;
 			while (isChosenSuccessfullyLevel == false)
@@ -75,15 +75,35 @@ void gameModesMenu()
 				}
 			}
 		}
-		else if (userChoice == 2)
+		else if (userChoiceGameModes == 2)
 		{
 			isChosenSuccessfullyGameMode = true;
+			while (isChosenSuccessfullyLevel == false)
+			{
+				cout << endl;
+				cout << "Enter the number of the desired level!" << endl;
+				cin >> level;
+				chooseLevel(level);
+				if (level < 1 || level>10) {
+					cout << "Enter a number between 1 and 10!" << endl;
+				}
+			}
 		}
-		else if (userChoice == 3)
+		else if (userChoiceGameModes == 3)
 		{
 			isChosenSuccessfullyGameMode = true;
+			while (isChosenSuccessfullyLevel == false)
+			{
+				cout << endl;
+				cout << "Enter the number of the desired level!" << endl;
+				cin >> level;
+				chooseLevel(level);
+				if (level < 1 || level>10) {
+					cout << "Enter a number between 1 and 10!" << endl;
+				}
+			}
 		}
-		else if (userChoice == 4)
+		else if (userChoiceGameModes == 4)
 		{
 			isChosenSuccessfullyGameMode = true;
 			mainMenu();
@@ -92,7 +112,7 @@ void gameModesMenu()
 		else
 		{
 			cout << "Please enter a valid action!" << endl;
-			cin >> userChoice;
+			cin >> userChoiceGameModes;
 			cout << endl;
 		}
 	}
@@ -224,8 +244,8 @@ void SmallPlanet(int a) {
 	}
 }
 
-bool AnswerLVL1(int a, int b, int c, int d, int e, int f, int g, int h) {
-	if (a != 2 || b != 5 || c != 8 || d != 1 || e != 6 || f != 7 || g != 4 || h != 3) {
+bool answerPlanetOrderingLevel1(int answer1, int answer2, int answer3, int answer4, int answer5, int answer6, int answer7, int answer8) {
+	if (answer1 != 2 || answer2 != 5 || answer3 != 8 || answer4 != 1 || answer5 != 6 || answer6 != 7 || answer7 != 4 || answer8 != 3) {
 		return false;
 	}
 	else {
@@ -233,8 +253,17 @@ bool AnswerLVL1(int a, int b, int c, int d, int e, int f, int g, int h) {
 	}
 }
 
-void level1(int n) {
-	if (n == 1) {
+bool answerHabitatFinderLevel1(int answer) {
+	if (answer != 1) {
+		return false;
+	}
+	else {
+		return true;
+	}
+}
+
+void planetOrderingLevel1(int level) {
+	if (level == 1) {
 
 		cout << "Put the planets in the correct order to gain access to the next level!" << endl;
 		cout << "Level 1: Our solar system!" << endl;
@@ -251,7 +280,7 @@ void level1(int n) {
 		cout << endl << endl << endl << endl << endl << endl << endl;
 		SmallPlanet(a);
 
-		if (AnswerLVL1(a, b, c, d, e, f, g, h) == 0) {
+		if (answerPlanetOrderingLevel1(a, b, c, d, e, f, g, h) == 0) {
 			cout << endl;
 			cout << "Wrong answer! Try again!";
 			loseScreen();
@@ -267,8 +296,8 @@ void level1(int n) {
 		return;
 	}
 }
-void level2(int n) {
-	if (n == 2) {
+void planetOrderingLevel2(int level) {
+	if (level == 2) {
 		cout << "Put the planets in the correct order to gain access to the next level!" << endl;
 		cout << "Level 2: Chronos!" << endl;
 		cout << "List of Planets:" << endl;
@@ -280,11 +309,55 @@ void level2(int n) {
 	}
 
 }
+	
+void habitatFinderLevel1(int level)
+{
+	if (level == 1) {
+		int answer;
+
+		cout << "By analysing the following information choose the planet which is most likely to be habitabal!" << endl;
+		cout << "Level 1: Our solar system!" << endl;
+		cout << "List of Planets:" << endl;
+		cout << setw(30) << "1.MARS" << setw(100) << "2.VENUS" << setw(75) << "3.JUPITER" << endl;
+		cout << "INFORMATION: Mars is the fourth planet from the Sun " << setw(85) << "INFORMATION: Venus is the second planet from the Sun. Venus has" << setw(95) << "INFORMATION: Jupiter is a gas giant. It is the fifth planet from the Sun" << endl; 
+		cout << "in our solar system. It has a thin atmosphere composed " << setw(100) << " a thick atmosphere primarily composed of carbon dioxide with clouds of sulfuric acid." << setw(70) << " and has a predominantly hydrogen and helium atmosphere." << endl;
+		cout << "mostly of carbon dioxide. Mars is cold and dry, with " << setw(100) << "Its surface is extremely hot, with temperatures reaching up to 475 degrees Celsius." << setw(50) << "It has immense gravity" << endl;
+		cout << "temperatures averaging around -62 degrees Celsius. " << endl;
+		cout << endl;
+		cin >> answer;
+
+	if (answerHabitatFinderLevel1(answer) == 0) {
+		cout << endl;
+		cout << "Wrong answer! Try again!";
+		loseScreen();
+		return;
+	}
+	else {
+		cout << endl;
+		cout << "Congrats! You may go to the next level!" << endl << endl;
+		winScreen();
+	}
+}
+	else {
+		return;
+	}
+}
 
 void chooseLevel(int level)
 {
-	level1(level);
-	level2(level);
+	if (userChoiceGameModes == 1)
+	{
+		planetOrderingLevel1(level);
+		planetOrderingLevel2(level);
+	}
+	else if(userChoiceGameModes == 2)
+	{
+		habitatFinderLevel1(level);
+	}
+	else if (userChoiceGameModes == 3)
+	{
+
+	}
 }
 
 void mainMenu()
