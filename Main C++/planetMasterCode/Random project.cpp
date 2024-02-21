@@ -1,5 +1,6 @@
 #include <iostream>
 #include<iomanip>
+#include<Windows.h>
 using namespace std;
 
 int level;
@@ -122,127 +123,44 @@ void winScreen();
 
 void loseScreen();
 
-void SunSizeS() {
-	cout << "        ";  //red 1 na emojito
-	for (int i = 0; i < 20; i++) {
+void sunSizeS() {
+	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(h,14);
+	cout << "       ";  
+	for (int i = 0; i < 22; i++) {
 		cout << "*";
 	}
 	cout << endl;
-	cout << "      ";  //red 2 na emojito
-	for (int i = 0; i < 21; i++) {
-		cout << " ";
-		if (i == 0) {
-			cout << "*";
-		}
-		else if (i == 20) {
-			cout << "*";
-		}
+	cout << "      "; 
+	for (int i = 0; i < 24; i++) {
+		cout << "*";
 	}
 	cout << endl;
-	cout << "     ";  //red 3 na emojito
-	for (int i = 0; i < 23; i++) {
-		cout << " ";
-		if (i == 0) {
-			cout << "*";
-		}
-		else if (i == 22) {
-			cout << "*";
-		}
+	cout << "     "; 
+	for (int i = 0; i < 26; i++) {
+		cout << "*";
 	}
 
 	cout << "     ";
-	for (int i = 0; i < 7; i++) {  //red 4,5,6 i 7 na slunceto
+	for (int i = 0; i < 7; i++) { 
 		cout << endl;
 		cout << "     ";
-		for (int i = 0; i < 23; i++) {
-			cout << " ";
-			if (i == 0) {
-				cout << "*";
-			}
-			else if (i == 22) {
-				cout << "*";
-			}
+		for (int i = 0; i < 27; i++) {
+			cout << "*";
 		}
 	}
 	cout << endl;
-	cout << "      ";//red 8 na slunceto
+	cout << "      ";
+	for (int i = 0; i < 25; i++) {
+		cout << "*";
+	}
+	cout << endl;
+	cout << "       ";
 	for (int i = 0; i < 23; i++) {
-		cout << " ";
-		if (i == 0) {
-			cout << "*";
-		}
-		else if (i == 20) {
-			cout << "*";
-		}
-	}
-	cout << endl;
-	cout << "        ";//red 9 na slunceto
-	for (int i = 0; i < 20; i++) {
 		cout << "*";
 	}
 }
 
-void SmallPlanet(int a) {
-	if (a == 2) {
-		cout << "        ";  //red 1 na emojito
-		for (int i = 0; i < 11; i++) {
-			cout << "*";
-		}
-		cout << endl;
-		cout << "      ";  //red 2 na emojito
-		for (int i = 0; i < 12; i++) {
-			cout << " ";
-			if (i == 0) {
-				cout << "*";
-			}
-			else if (i == 11) {
-				cout << "*";
-			}
-		}
-		cout << endl;
-		cout << "     ";  //red 3 na emojito
-		for (int i = 0; i < 14; i++) {
-			cout << " ";
-			if (i == 0) {
-				cout << "*";
-			}
-			else if (i == 13) {
-				cout << "*";
-			}
-		}
-
-		cout << "     ";
-		for (int i = 0; i < 3; i++) {  //red 4,5,6 i 7 na slunceto
-			cout << endl;
-			cout << "     ";
-			for (int i = 0; i < 14; i++) {
-				cout << " ";
-				if (i == 0) {
-					cout << "*";
-				}
-				else if (i == 13) {
-					cout << "*";
-				}
-			}
-		}
-		cout << endl;
-		cout << "      ";//red 8 na slunceto
-		for (int i = 0; i < 12; i++) {
-			cout << " ";
-			if (i == 0) {
-				cout << "*";
-			}
-			else if (i == 11) {
-				cout << "*";
-			}
-		}
-		cout << endl;
-		cout << "        ";//red 9 na slunceto
-		for (int i = 0; i < 11; i++) {
-			cout << "*";
-		}
-	}
-}
 
 bool answerPlanetOrderingLevel1(int answer1, int answer2, int answer3, int answer4, int answer5, int answer6, int answer7, int answer8) {
 	if (answer1 != 2 || answer2 != 5 || answer3 != 8 || answer4 != 1 || answer5 != 6 || answer6 != 7 || answer7 != 4 || answer8 != 3) {
@@ -263,7 +181,10 @@ bool answerHabitatFinderLevel1(int answer) {
 }
 
 void planetOrderingLevel1(int level) {
+	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(h, 7);
 	if (level == 1) {
+
 
 		cout << "Put the planets in the correct order to gain access to the next level!" << endl;
 		cout << "Level 1: Our solar system!" << endl;
@@ -272,13 +193,12 @@ void planetOrderingLevel1(int level) {
 		cout << "6.Jupiter" << endl << "7.Saturn" << endl << "8.Earth" << endl;
 		cout << endl;
 
-		SunSizeS();
+		sunSizeS();
 		cout << endl << endl;
 		int a, b, c, d, e, f, g, h;
 		cin >> a >> b >> c >> d >> e >> f >> g >> h;
-		SunSizeS();
 		cout << endl << endl << endl << endl << endl << endl << endl;
-		SmallPlanet(a);
+		
 
 		if (answerPlanetOrderingLevel1(a, b, c, d, e, f, g, h) == 0) {
 			cout << endl;
@@ -361,30 +281,37 @@ void chooseLevel(int level)
 }
 
 void drawPlanetMaster() {
+
 	cout << endl << endl << endl << endl << endl;
-	cout << "             ********************************************************************************************************************************************************************************************************" << endl;
-	cout << "             **        ******    ****************** ***********    ******   ******        ******            *****    *****    ************ ***********         ****            ******        *******          *******" << endl;
-	cout << "             **   **    *****    *****************   **********     *****   ******   ***************    *********     ***     ***********   **********    *************    **********   ************   *****   ******" << endl;
-	cout << "             **   **    *****    ****************  *  *********   *  ****   ******   ***************    *********   *     *   **********  *  *********    *************    **********   ************   *****   ******" << endl;
-	cout << "             **       *******    ***************       ********   **  ***   ******        **********    *********   **   **   *********       ********         ********    **********        *******        *********" << endl;
-	cout << "             **   ***********    **************   ***   *******   ***  **   ******   ***************    *********   *******   ********   ***   ************    ********    **********   ************   *****  *******" << endl;
-	cout << "             **   ***********         ********   *   *   ******   ****  *   ******   ***************    *********   *******   *******   *   *   ***********    ********    **********   ************   ******  ******" << endl;
-	cout << "             **   ***********         *******   *     *   *****   *****     ******        **********    *********   *******   ******   *     *   *****         ********    **********         ******   ******  ******" << endl;
-	cout << "             ********************************************************************************************************************************************************************************************************" << endl;
-	cout << "             ********************************************************************************************************************************************************************************************************" << endl;
-	cout << "             **********  ***********       *********      ********          *********************             *************            *************    **** ********       *********             **********    *****" << endl;
-	cout << "              ********    *********         *******  ***   ******            *******************               ***********     ******   ***********      **   ******         *******     ******    ********      *** " << endl;
-	cout << "               ******      *******           *****   ***    ****              *****************                 *********     *      *   *********             ****           *****      *    *     ******        *  " << endl;
-	cout << "               *****        *****             * *            **     ******     ***************                   *******      *      *    *******               **             ***       *    *      ****            " << endl;
-	cout << "                ***          * *               *                   *      *     *************        ******       *****        ******      *****                                *        ******       **             " << endl;
-	cout << "                              *                                    *      *      ***********        *      *       ***                      * *                                                                      " << endl;
-	cout << "                                                                   *      *       *********         *      *        *                        *                                                                       " << endl;
-	cout << "                                                                    ******         * * * *           ******                                                                                                          " << endl;
-	cout << endl << endl   << endl << endl << endl;
+	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(h, 3);
+	
+		cout << "             ********************************************************************************************************************************************************************************************************" << endl;
+		cout << "             **        ******    ****************** ***********    ******   ******        ******            *****    *****    ************ ***********         ****            ******        *******          *******" << endl;
+		cout << "             **   **    *****    *****************   **********     *****   ******   ***************    *********     ***     ***********   **********    *************    **********   ************   *****   ******" << endl;
+		cout << "             **   **    *****    ****************  *  *********   *  ****   ******   ***************    *********   *     *   **********  *  *********    *************    **********   ************   *****   ******" << endl;
+		cout << "             **       *******    ***************       ********   **  ***   ******        **********    *********   **   **   *********       ********         ********    **********        *******        *********" << endl;
+		cout << "             **   ***********    **************   ***   *******   ***  **   ******   ***************    *********   *******   ********   ***   ************    ********    **********   ************   *****  *******" << endl;
+		cout << "             **   ***********         ********   *   *   ******   ****  *   ******   ***************    *********   *******   *******   *   *   ***********    ********    **********   ************   ******  ******" << endl;
+		cout << "             **   ***********         *******   *     *   *****   *****     ******        **********    *********   *******   ******   *     *   *****         ********    **********         ******   ******  ******" << endl;
+		cout << "             ********************************************************************************************************************************************************************************************************" << endl;
+		cout << "             ********************************************************************************************************************************************************************************************************" << endl;
+		cout << "             **********  ***********       *********      ********          *********************             *************            *************    **** ********       *********             **********    *****" << endl;
+		cout << "              ********    *********         *******  ***   ******            *******************               ***********     ******   ***********      **   ******         *******     ******    ********      *** " << endl;
+		cout << "               ******      *******           *****   ***    ****              *****************                 *********     *      *   *********             ****           *****      *    *     ******        *  " << endl;
+		cout << "               *****        *****             * *            **     ******     ***************                   *******      *      *    *******               **             ***       *    *      ****            " << endl;
+		cout << "                ***          * *               *                   *      *     *************        ******       *****        ******      *****                                *        ******       **             " << endl;
+		cout << "                              *                                    *      *      ***********        *      *       ***                      * *                                                                      " << endl;
+		cout << "                                                                   *      *       *********         *      *        *                        *                                                                       " << endl;
+		cout << "                                                                    ******         * * * *           ******                                                                                                          " << endl;
+		cout << endl << endl << endl << endl << endl;
+	
 }
 
 void mainMenu()
 {
+	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(h, 7);
 	drawPlanetMaster();
 	int userChoice;
 	bool isChosenSuccessfullyMainMenu = false;
@@ -445,13 +372,14 @@ void winScreen() {
 	int userChoice;
 	bool isChosenSuccessfullyMainMenu = false;
 	bool isChosenSuccessfullyPlay = false;
-
-	cout << "        ";  //red 1 na emojito
+	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(h, 7);
+	cout << "        "; 
 	for (int i = 0; i < 14; i++) {
 		cout << "*";
 	}
 	cout << endl;
-	cout << "      ";  //red 2 na emojito
+	cout << "      ";  
 	for (int i = 0; i < 15; i++) {
 		cout << " ";
 		if (i == 0) {
@@ -461,7 +389,7 @@ void winScreen() {
 			cout << "*";
 		}
 	}
-	for (int i = 0; i < 1; i++) {  //red 4,5,6 i 7 na emojito 
+	for (int i = 0; i < 1; i++) { 
 		cout << endl;
 		cout << "     ";
 		for (int i = 0; i < 17; i++) {
@@ -480,7 +408,7 @@ void winScreen() {
 	cout << "      *  1. Next Level *" << endl;
 	cout << "      *     2. Back    *" << endl;
 	cout << "      *     3. Quit    *" << endl;
-	for (int i = 0; i < 1; i++) {  //red 4,5,6 i 7 na emojito 
+	for (int i = 0; i < 1; i++) {  
 		cout << "     ";
 		for (int i = 0; i < 17; i++) {
 			cout << " ";
@@ -493,7 +421,7 @@ void winScreen() {
 		}
 	}
 	cout << endl;
-	cout << "      ";  //red 2 na emojito
+	cout << "      ";  
 	for (int i = 0; i < 15; i++) {
 		cout << " ";
 		if (i == 0) {
@@ -538,7 +466,8 @@ void loseScreen() {
 	int userChoice;
 	bool isChosenSuccessfullyMainMenu = false;
 	bool isChosenSuccessfullyPlay = false;
-
+	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(h, 7);
 	cout << endl << endl << endl;
 	cout << "       ***************" << endl;
 	cout << "      ********      *   " << endl;
@@ -609,6 +538,6 @@ void loseScreen() {
 
 int main()
 {
-	system("color 03");
-	mainMenu();
+	system("color 07");
+	mainMenu();		
 }
