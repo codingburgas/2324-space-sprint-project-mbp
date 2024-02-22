@@ -180,6 +180,15 @@ bool answerHabitatFinderLevel1(int answer) {
 	}
 }
 
+bool answerHabitatFinderLevel2(int answer) {
+	if (answer != 3) {
+		return false;
+	}
+	else {
+		return true;
+	}
+}
+
 void planetOrderingLevel1(int level) {
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(h, 7);
@@ -263,6 +272,38 @@ void habitatFinderLevel1(int level)
 	}
 }
 
+void habitatFinderLevel2(int level)
+{
+	if (level == 2) {
+		int answer;
+
+		cout << "By analysing the following information choose the planet which is most likely to be habitabal!" << endl;
+		cout << "Level 1: Our solar system!" << endl;
+		cout << "List of Planets:" << endl;
+		cout << setw(30) << "1.Gliese 876 d" << setw(75) << "2.HD 189733b" << setw(100) << "3.Kepler-452b" << endl;
+		cout << "INFORMATION: Gliese 876 d has a mass about 6 times that of Earth" << setw(90) << "INFORMATION: HD 189733b is a gas giant, similar in size to Jupiter, " << setw(75) << "INFORMATION: Kepler-452b orbits a star similar to the Sun." << endl;
+		cout << "It's located within the habitable zone of its star" << setw(77) << " and orbits very close to its parent star." << setw(87) << " It is about 1.6 times the size of Earth and" << endl;
+		cout << "It's in a tidally locked state (The same side is facing its star). " << setw(65) << " It's atmosphere likely has silicate particles." << setw(83) << " orbits within the habitable zone of its star" << endl;
+		cout << endl;
+		cin >> answer;
+
+		if (answerHabitatFinderLevel2	(answer) == 0) {
+			cout << endl;
+			cout << "Wrong answer! Try again!";
+			loseScreen();
+			return;
+		}
+		else {
+			cout << endl;
+			cout << "Congrats! You may go to the next level!" << endl << endl;
+			winScreen();
+		}
+	}
+	else {
+		return;
+	}
+}
+
 void chooseLevel(int level)
 {
 	if (userChoiceGameModes == 1)
@@ -273,6 +314,7 @@ void chooseLevel(int level)
 	else if(userChoiceGameModes == 2)
 	{
 		habitatFinderLevel1(level);
+		habitatFinderLevel2(level);
 	}
 	else if (userChoiceGameModes == 3)
 	{
