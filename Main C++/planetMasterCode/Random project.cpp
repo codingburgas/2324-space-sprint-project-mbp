@@ -304,6 +304,58 @@ void habitatFinderLevel2(int level)
 	}
 }
 
+void planetExpertMain() {
+	cout << "Welcome! You are a scientist at CERN and you have been hired to find Higgs Bozons with the particle accelerator:" << endl << endl;
+	const int radius = 15;
+	for (int y = -radius; y <= radius; ++y) {
+		for (int x = -radius; x <= radius; ++x) {
+			double distance = sqrt(x * x + y * y);
+			if (abs(distance - radius) < 0.5 || abs(distance - radius / 2) < 0.5) {
+				cout << "* ";
+			}
+			else {
+				cout << "  ";
+			}
+		}
+		cout << endl;
+	}
+	cout << endl << endl;
+	cout << "You have been given 100 power points, you can use them to power the particle accelerator and find 1 Higgs Bozon (1 Bozon Point) for every 5 power points you use! You need 100 BP to win the game and become the planet expert!" << endl;
+	cout << "You can buy upgrades with BP in the upgrade store!" << endl;
+	cout << endl << endl;
+	cout << "Press '1' to use 5 power points and find 1 Higgs Bozon or '5' to go to the upgrades store:" << endl;
+}
+
+void planetExpert(int level)
+{
+	int usedPowerPoints;
+	int powerPoints = 100;
+	int BP = 0;
+	if (level == 1) {
+		planetExpertMain();
+			cin >> usedPowerPoints;
+			if (usedPowerPoints == 1) {
+				powerPoints = powerPoints - 5;
+				BP += 1;
+				cout << "You found 1 Higgs Bozon and your current balance is " << BP;
+			}
+			else if (usedPowerPoints == 5) {
+				int upgradeBuy;
+				bool powerMaster;
+				cout << "Welcome to the upgrades store! You can buy the following upgrades (note that you have to buy them in the order they are put in)" << endl;
+				cout << "1.Power master - you can now use 10 power points and get 2 BP (you also get 20 power points when you buy the upgrade)-cost:3 BP" << endl;
+				cout << "Choose which upgrade you want to buy by entering the corresponding number or enter 10 to go back to the play tab: " << endl;
+				cin >> upgradeBuy;
+				if (upgradeBuy == 1) {
+					powerMaster = true;
+				}
+				else if (upgradeBuy == 10) {
+					planetExpertMain();
+				}
+			}
+	}
+}
+
 void chooseLevel(int level)
 {
 	if (userChoiceGameModes == 1)
@@ -318,7 +370,7 @@ void chooseLevel(int level)
 	}
 	else if (userChoiceGameModes == 3)
 	{
-
+		planetExpert(level);
 	}
 }
 
@@ -358,19 +410,20 @@ void mainMenu()
 	int userChoice;
 	bool isChosenSuccessfullyMainMenu = false;
 	bool isChosenSuccessfullyPlay = false;
-	cout << "PLANET MASTER" << endl;
-	cout << "_____________" << endl;
+	cout <<"                                                                                                                 PLANET MASTER" << endl;
+	cout << "                                                                                                                _____________" << endl;
 	cout << endl;
-	cout << "_____________" << endl;
-	cout << "|  1. Play  |" << endl;
-	cout << "*************" << endl;
-	cout << "_____________" << endl;
-	cout << "|2. Settings|" << endl;
-	cout << "*************" << endl;
-	cout << "_____________" << endl;
-	cout << "| 3. Credits|" << endl;
-	cout << "*************" << endl;
-	cout << "Choose what would you like to do by typing the corresponding number!" << endl;
+	cout << "                                                                                                           ______________________" << endl;
+	cout << "                                                                                                          |       1. Play       |" << endl;
+	cout << "                                                                                                           **********************" << endl;
+	cout << "                                                                                                           ______________________" << endl;
+	cout << "                                                                                                          |       2. Settings   |" << endl;
+	cout << "                                                                                                           **********************" << endl;
+	cout << "                                                                                                           ______________________" << endl;
+	cout << "                                                                                                          |       3. Credits    |" << endl;
+	cout << "                                                                                                           **********************" << endl;
+	cout << endl << endl;
+	cout << "                                                                                Choose what would you like to do by typing the corresponding number!" << endl;
 	cin >> userChoice;
 	cout << endl;
 
