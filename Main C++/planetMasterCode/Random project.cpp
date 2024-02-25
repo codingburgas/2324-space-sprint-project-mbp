@@ -48,11 +48,11 @@ void gameModesMenu()
 	cout << endl;
 	cout << "3.Planet expert" << endl;
 	gameModeMenuLine();
-	cout << " _______ " << setw(5) << " _______ " << setw(5) << " _______   |" << endl;
-	cout << "| LEVEL |" << setw(5) << "| LEVEL |" << setw(5) << "| LEVEL |  |" << endl;
-	cout << "|   1   |" << setw(5) << "|   2   |" << setw(5) << "|   3   |  |" << endl;
-	cout << "|       |" << setw(5) << "|       |" << setw(5) << "|       |  |" << endl;
-	cout << " ******* " << setw(5) << " ******* " << setw(5) << " *******   |" << endl;
+	cout << " ____________________________" << endl;
+	cout << "|            LEVEL           |" << endl;
+	cout << "|              1             |" << endl;
+	cout << "|                            |" << endl;
+	cout << " ****************************" << endl;
 	gameModeMenuLine();
 	cout << "4.Back" << endl;
 	gameModeMenuLine();
@@ -456,6 +456,10 @@ void planetExpertMain() {
 	cout << "Press '1' to use 5 power points and find 1 Higgs Bozon or '5' to go to the upgrades store:" << endl;
 }
 
+void planetExpertMainNoAcc() {
+	cout << "Press '1' to use 5 power points and find 1 Higgs Bozon or '5' to go to the upgrades store:" << endl;
+}
+
 void planetExpert(int level)
 {
 	int usedPowerPoints;
@@ -464,25 +468,41 @@ void planetExpert(int level)
 	if (level == 1) {
 		planetExpertMain();
 			cin >> usedPowerPoints;
-			if (usedPowerPoints == 1) {
-				powerPoints = powerPoints - 5;
-				BP += 1;
-				cout << "You found 1 Higgs Bozon and your current balance is " << BP;
+			if (BP != 100){
+						if (usedPowerPoints == 1) {
+							powerPoints = powerPoints - 5;
+							BP += 1;
+							cout << "You found 1 Higgs Bozon and your current balance is " << BP << " and " << powerPoints << " power points" << endl;
+
+						}
+						else if (usedPowerPoints == 10) {
+							powerPoints = powerPoints - 10;
+							BP += 2;
+							cout << "You found 2 Higgs Bozons and your current balance is " << BP << " and " << powerPoints << " power points" << endl;
+
+							planetExpertMainNoAcc();
+						}
+						else if (usedPowerPoints == 5) {
+							int upgradeBuy;
+							bool powerMaster;
+							cout << "Welcome to the upgrades store! You can buy the following upgrades (note that you have to buy them in the order they are put in)" << endl << endl;
+							cout << "1.Power master - you can now use 10 power points and get 2 BP (you also get 20 power points when you buy the upgrade)-cost:3 BP" << endl;
+							cout << "Choose which upgrade you want to buy by entering the corresponding number or enter 10 to go back to the play tab: " << endl;
+							cin >> upgradeBuy;
+							if (upgradeBuy == 1 && BP >= 3) {
+								BP = BP - 3;
+								powerMaster = true;
+								powerPoints += 20;
+								cout << "To use the power enter '10'" << endl;
+								planetExpertMainNoAcc();
+							}
+							else if (upgradeBuy == 10) {
+								planetExpertMainNoAcc();
+							}
+						}
+						planetExpertMain();
 			}
-			else if (usedPowerPoints == 5) {
-				int upgradeBuy;
-				bool powerMaster;
-				cout << "Welcome to the upgrades store! You can buy the following upgrades (note that you have to buy them in the order they are put in)" << endl;
-				cout << "1.Power master - you can now use 10 power points and get 2 BP (you also get 20 power points when you buy the upgrade)-cost:3 BP" << endl;
-				cout << "Choose which upgrade you want to buy by entering the corresponding number or enter 10 to go back to the play tab: " << endl;
-				cin >> upgradeBuy;
-				if (upgradeBuy == 1) {
-					powerMaster = true;
-				}
-				else if (upgradeBuy == 10) {
-					planetExpertMain();
-				}
-			}
+		
 	}
 }
 
@@ -542,7 +562,7 @@ void mainMenu()
 	int userChoice;
 	bool isChosenSuccessfullyMainMenu = false;
 	bool isChosenSuccessfullyPlay = false;
-	cout <<"                                                                                                                 PLANET MASTER" << endl;
+	cout <<"                                                                                                                PLANET MASTER" << endl;
 	cout << "                                                                                                                _____________" << endl;
 	cout << endl;
 	cout << "                                                                                                           ______________________" << endl;
