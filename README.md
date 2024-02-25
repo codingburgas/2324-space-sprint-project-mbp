@@ -2,7 +2,7 @@
 # MBP
 # Project: Physics and science
 
-## 👨‍👨‍👦‍👦Team Members👨‍👨‍👦‍👦#
+## 👨‍👨‍👦‍👦Team Members👨‍👨‍👦‍👦
 <ol>
 <li>Милко Стоянов Барев - Scrum Trainer/Team Leader 🟦9g</li>
   <li>Станислав Недков Радев - Developer/To create  and upgrade C++ code 🟦9g</li>
@@ -12,7 +12,7 @@
 
 ## 📎 Description
   
-Our C++ code is made to test your knowledge of physics and science. It follows a quiz in 3 categories with 7 normal levels and 2 custom levels.
+Our C++ code is made to test your knowledge of physics and science. It follows a quiz in 3 categories, with 7 normal levels and 2 custom levels.
 
 ## 🔶 Usage
 
