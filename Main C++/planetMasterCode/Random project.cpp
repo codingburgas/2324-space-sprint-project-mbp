@@ -1,5 +1,6 @@
 #include <iostream>
 #include<iomanip>
+#include<string>
 #include<Windows.h>
 using namespace std;
 
@@ -123,6 +124,10 @@ void winScreen();
 
 void loseScreen();
 
+void winScreenFinal();
+
+void loseScreenFinal();
+
 void sunSizeS() {
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(h,14);
@@ -238,6 +243,71 @@ void planetOrderingLevel2(int level) {
 	}
 
 }
+
+void planetOrderingCustomLevel(int level)
+{
+	if (level == 3) {
+		string levelGoal;
+		string levelName;
+		int numberOfPlanets;
+		string planets[50];
+		int correctAnswer[50];
+		int answer[50];
+		cout << "CUSTOM LEVEL" << endl;
+		cout << "~~~~~~~~~~~~" << endl;
+		cout << endl;
+		getline(cin, levelName, '\n');
+		cout << "What is the name of your level?" << endl;
+		getline(cin, levelName, '\n');
+		cout << "What does the player of your level needs to do?" << endl;
+		getline(cin, levelGoal, '\n');
+		cout << "How many planets would you like your level to have?" << endl;
+		cin >> numberOfPlanets;
+		cout << "Enter the names of the planets: " << endl;
+		for (int i = 0; i < numberOfPlanets; i++)
+		{
+			cin >> planets[i];
+		}
+		cout << "Enter correct answer:" << endl;
+		for (int i = 0; i < numberOfPlanets; i++)
+		{
+			cin >> correctAnswer[i];
+		}
+		cout << endl << endl << endl;
+
+		cout << "Goal:" << levelGoal << endl;
+		cout << "Custom level: " << levelName << endl;
+		cout << "List of Planets:" << endl;
+		for (int i = 0; i < numberOfPlanets; i++)
+		{
+			cout << i + 1 << "." << planets[i] << endl;
+		}
+
+		for (int i = 0; i < numberOfPlanets; i++)
+		{
+			cin >> answer[i];
+		}
+		
+		for (int i = 0; i < numberOfPlanets; i++)
+		{
+			if (answer[i] == correctAnswer[i])
+			{
+			}
+			else {
+				cout << endl;
+				cout << "Wrong answer! Try again!";
+				loseScreenFinal();
+				return;
+			}
+			cout << endl;
+			cout << "Congrats! You may go to the next level!" << endl << endl;
+			winScreenFinal();
+		}
+	}
+	else {
+		return;
+	}
+}
 	
 void habitatFinderLevel1(int level)
 {
@@ -304,6 +374,59 @@ void habitatFinderLevel2(int level)
 	}
 }
 
+void habitatFinderCustomLevel(int level)
+{
+	if (level == 3) {
+		
+		int numberOfPlanets;
+		string planets[50];
+		string planetsInformation[50];
+		int correctAnswer;
+		int answer;
+		cout << "CUSTOM LEVEL" << endl;
+		cout << "~~~~~~~~~~~~" << endl;
+		cout << endl;
+		cout << "How many planets would you like your level to have?" << endl;
+		cin >> numberOfPlanets;
+		cout << "Enter the names of the planets and information for each one:" << endl;
+		for (int i = 0; i < numberOfPlanets; i++)
+		{
+			cout << "Planet:" << endl;
+			cin >> planets[i];
+			cout << endl << "Information:";
+			getline(cin, planetsInformation[i], '\n');
+		}
+		cout << "Enter correct answer:" << endl;
+			cin >> correctAnswer;
+		cout << endl << endl << endl;
+
+		cout << "By analysing the following information choose the planet which is most likely to be habitabal!" << endl;
+		cout << "List of Planets:" << endl;
+		for (int i = 0; i < numberOfPlanets; i++)
+		{
+			cout << i + 1 << "." << planets[i] << endl;
+		}
+
+		cout << "Enter the most habitable planet:" << endl;
+		cin >> answer;
+		if (answer == correctAnswer)
+		{
+			cout << endl;
+			cout << "Congrats! You may go to the next level!" << endl << endl;
+			winScreenFinal();
+		}
+		else {
+			cout << endl;
+			cout << "Wrong answer! Try again!";
+			loseScreenFinal();
+			return;
+		}
+	}
+	else {
+		return;
+	}
+}
+
 void planetExpertMain() {
 	cout << "Welcome! You are a scientist at CERN and you have been hired to find Higgs Bozons with the particle accelerator:" << endl << endl;
 	const int radius = 15;
@@ -362,11 +485,13 @@ void chooseLevel(int level)
 	{
 		planetOrderingLevel1(level);
 		planetOrderingLevel2(level);
+		planetOrderingCustomLevel(level);
 	}
 	else if(userChoiceGameModes == 2)
 	{
 		habitatFinderLevel1(level);
 		habitatFinderLevel2(level);
+		habitatFinderCustomLevel(level);
 	}
 	else if (userChoiceGameModes == 3)
 	{
@@ -557,6 +682,100 @@ void winScreen() {
 	}
 }
 
+void winScreenFinal()
+{
+	int userChoice;
+	bool isChosenSuccessfullyMainMenu = false;
+	bool isChosenSuccessfullyPlay = false;
+	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(h, 7);
+	cout << "        ";
+	for (int i = 0; i < 14; i++) {
+		cout << "*";
+	}
+	cout << endl;
+	cout << "      ";
+	for (int i = 0; i < 15; i++) {
+		cout << " ";
+		if (i == 0) {
+			cout << "*";
+		}
+		else if (i == 14) {
+			cout << "*";
+		}
+	}
+	for (int i = 0; i < 1; i++) {
+		cout << endl;
+		cout << "     ";
+		for (int i = 0; i < 17; i++) {
+			cout << " ";
+			if (i == 0) {
+				cout << "*";
+			}
+			else if (i == 16) {
+				cout << "*";
+			}
+		}
+	}
+	cout << endl;
+	cout << "      *  Planet master *" << endl;
+	cout << "      *  _____________ *" << endl;
+	cout << "      *  1.Play Again  *" << endl;
+	cout << "      *     2. Back    *" << endl;
+	cout << "      *     3. Quit    *" << endl;
+	for (int i = 0; i < 1; i++) {
+		cout << "     ";
+		for (int i = 0; i < 17; i++) {
+			cout << " ";
+			if (i == 0) {
+				cout << "*";
+			}
+			else if (i == 16) {
+				cout << "*";
+			}
+		}
+	}
+	cout << endl;
+	cout << "      ";
+	for (int i = 0; i < 15; i++) {
+		cout << " ";
+		if (i == 0) {
+			cout << "*";
+		}
+		else if (i == 14) {
+			cout << "*";
+		}
+	}
+	cout << endl;
+	cout << "        **************" << endl << endl;
+
+	cout << "Choose what would you like to do by typing the corresponding number!" << endl;
+	cin >> userChoice;
+	cout << endl;
+
+	while (isChosenSuccessfullyMainMenu == false)
+	{
+		if (userChoice == 1)
+		{
+			chooseLevel(level);
+		}
+		else if (userChoice == 2)
+		{
+			mainMenu();
+		}
+		else if (userChoice == 3)
+		{
+			exit(0);
+		}
+		else
+		{
+			cout << "Please enter a valid action!" << endl;
+			cin >> userChoice;
+			cout << endl;
+		}
+	}
+}
+
 void loseScreen() {
 	int userChoice;
 	bool isChosenSuccessfullyMainMenu = false;
@@ -630,6 +849,78 @@ void loseScreen() {
 	}
 }
 
+void loseScreenFinal() {
+	int userChoice;
+	bool isChosenSuccessfullyMainMenu = false;
+	bool isChosenSuccessfullyPlay = false;
+	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(h, 7);
+	cout << endl << endl << endl;
+	cout << "       ***************" << endl;
+	cout << "      ********      *   " << endl;
+	cout << "       *        *    " << endl;
+	cout << "           *    *******" << endl;
+	cout << "      ***********      *" << endl;
+	cout << "      *  Planet loser  *" << endl;
+	cout << "      *  ____________  *" << endl;
+	cout << "      *  1. Try again  *" << endl;
+	cout << "      *     2. Back    *" << endl;
+	cout << "      *     3. Quit    *" << endl;
+	for (int i = 0; i < 1; i++) {  //red 4,5,6 i 7 na emojito 
+		cout << "     ";
+		for (int i = 0; i < 17; i++) {
+			cout << " ";
+			if (i == 0) {
+				cout << "*";
+			}
+			else if (i == 16) {
+				cout << "*";
+			}
+		}
+	}
+	cout << endl;
+	cout << "      ";//red 8 na emojito
+	for (int i = 0; i < 15; i++) {
+		cout << " ";
+		if (i == 0) {
+			cout << "*";
+		}
+		else if (i == 14) {
+			cout << "*";
+		}
+	}
+	cout << endl;
+	cout << "        ";//red 9 na emojito
+	for (int i = 0; i < 14; i++) {
+		cout << "*";
+	}
+	cout << endl << endl;
+
+	cout << "Choose what would you like to do by typing the corresponding number!" << endl;
+	cin >> userChoice;
+	cout << endl;
+
+	while (isChosenSuccessfullyMainMenu == false)
+	{
+		if (userChoice == 1)
+		{
+			chooseLevel(level);
+		}
+		else if (userChoice == 2)
+		{
+			mainMenu();
+		}
+		else if (userChoice == 3)
+		{
+			exit(0);
+		}
+		else
+		{
+			cout << "Please enter a valid action!" << endl;
+			cin >> userChoice;
+		}
+	}
+}
 
 int main()
 {
