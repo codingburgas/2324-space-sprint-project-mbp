@@ -31,18 +31,18 @@ void gameModesMenu()
 	cout << "1.Planet ordering" << endl;
 	gameModeMenuLine();
 	cout << " _______ " << setw(5) << " _______ " << setw(5) << " _______   |" << endl;
-	cout << "| LEVEL |" << setw(5) << "| LEVEL |" << setw(5) << "| LEVEL |  |" << endl;
-	cout << "|   1   |" << setw(5) << "|   2   |" << setw(5) << "|   3   |  |" << endl;
-	cout << "|       |" << setw(5) << "|       |" << setw(5) << "|       |  |" << endl;
+	cout << "| LEVEL |" << setw(5) << "| LEVEL |" << setw(5) << "| CUSTOM|  |" << endl;
+	cout << "|   1   |" << setw(5) << "|   2   |" << setw(5) << "| LEVEL |  |" << endl;
+	cout << "|       |" << setw(5) << "|       |" << setw(5) << "|   3   |  |" << endl;
 	cout << " ******* " << setw(5) << " ******* " << setw(5) << " *******   |" << endl;
 	gameModeMenuLine();
 	cout << endl;
 	cout << "2.Habitat finder" << endl;
 	gameModeMenuLine();
 	cout << " _______ " << setw(5) << " _______ " << setw(5) << " _______   |" << endl;
-	cout << "| LEVEL |" << setw(5) << "| LEVEL |" << setw(5) << "| LEVEL |  |" << endl;
-	cout << "|   1   |" << setw(5) << "|   2   |" << setw(5) << "|   3   |  |" << endl;
-	cout << "|       |" << setw(5) << "|       |" << setw(5) << "|       |  |" << endl;
+	cout << "| LEVEL |" << setw(5) << "| LEVEL |" << setw(5) << "| CUSTOM|  |" << endl;
+	cout << "|   1   |" << setw(5) << "|   2   |" << setw(5) << "| LEVEL |  |" << endl;
+	cout << "|       |" << setw(5) << "|       |" << setw(5) << "|   3   |  |" << endl;
 	cout << " ******* " << setw(5) << " ******* " << setw(5) << " *******   |" << endl;
 	gameModeMenuLine();
 	cout << endl;
@@ -275,8 +275,8 @@ void planetOrderingCustomLevel(int level)
 		}
 		cout << endl << endl << endl;
 
-		cout << "Goal:" << levelGoal << endl;
 		cout << "Custom level: " << levelName << endl;
+		cout << "Goal:" << levelGoal << endl;
 		cout << "List of Planets:" << endl;
 		for (int i = 0; i < numberOfPlanets; i++)
 		{
@@ -377,15 +377,21 @@ void habitatFinderLevel2(int level)
 void habitatFinderCustomLevel(int level)
 {
 	if (level == 3) {
-		
+		string levelGoal;
+		string levelName;
 		int numberOfPlanets;
 		string planets[50];
-		string planetsInformation[50];
+		string planetsInformation[500];
 		int correctAnswer;
 		int answer;
 		cout << "CUSTOM LEVEL" << endl;
 		cout << "~~~~~~~~~~~~" << endl;
 		cout << endl;
+		getline(cin, levelName, '\n');
+		cout << "What is the name of your level?" << endl;
+		getline(cin, levelName, '\n');
+		cout << "What does the player of your level needs to do?" << endl;
+		getline(cin, levelGoal, '\n');
 		cout << "How many planets would you like your level to have?" << endl;
 		cin >> numberOfPlanets;
 		cout << "Enter the names of the planets and information for each one:" << endl;
@@ -393,6 +399,7 @@ void habitatFinderCustomLevel(int level)
 		{
 			cout << "Planet:" << endl;
 			cin >> planets[i];
+			getline(cin, planetsInformation[i], '\n');
 			cout << endl << "Information:";
 			getline(cin, planetsInformation[i], '\n');
 		}
@@ -404,7 +411,7 @@ void habitatFinderCustomLevel(int level)
 		cout << "List of Planets:" << endl;
 		for (int i = 0; i < numberOfPlanets; i++)
 		{
-			cout << i + 1 << "." << planets[i] << endl;
+			cout << i + 1 << "." << planets[i] << "- " << planetsInformation[i] << endl;
 		}
 
 		cout << "Enter the most habitable planet:" << endl;
