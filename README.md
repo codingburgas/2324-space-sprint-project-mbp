@@ -10,7 +10,7 @@ Developer <a href = https://github.com/BZRusinov22> Борис Житомиро�
 
 ## 📎 Description
   
-Our C++ code is made to test your knowledge of physics and science. It follows a quiz in 3 categories, with 7 normal levels and 2 custom levels.
+Our C++ code is made to test your knowledge of physics and science. It follows a quiz in 3 categories, with 5 normal levels and 2 custom levels.
 
 ## 🔶 Usage
 
