@@ -10,7 +10,7 @@ Developer <a href = https://github.com/BZRusinov22> Борис Житомиро�
 
 ## 📎 Description
   
-Our C++ code is made to test your knowledge of physics and science. It follows a quiz in 3 categories, with 7 normal levels and 2 custom levels.
+Our C++ code is made to test your knowledge of physics and science. It follows a quiz in 3 categories, with 5 normal levels and 2 custom levels.
 
 ## 🔶 Usage
 
@@ -22,7 +22,7 @@ Our C++ code is made to test your knowledge of physics and science. It follows a
 <h2 align = "left"> Technologies used 💻</h2>
 <br>
 <p>
- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png" alt="VS code logo" width=48px/>
+ <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Visual_Studio_Icon_2022.svg/1200px-Visual_Studio_Icon_2022.svg.png" alt="VS  logo" width=48px/>
     <img src="https://cdn-icons-png.flaticon.com/512/2111/2111612.png" alt="GitHub logo" width = "50px"/>
     <img src="https://img.icons8.com/color/344/microsoft-teams.png" alt = "MS Teams logo" width="50px" />
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/107px-ISO_C%2B%2B_Logo.svg.png" alt = "Cpp logo" with="50px" height="50px"/>
