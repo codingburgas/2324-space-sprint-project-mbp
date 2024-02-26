@@ -2,13 +2,11 @@
 # MBP
 # Project: Physics and science
 
-## 👨‍👨‍👦‍👦Team Members👨‍👨‍👦‍👦
-<ol>
-<li>Милко Стоянов Барев - Scrum Trainer/Team Leader 🟦9g</li>
-  <li>Станислав Недков Радев - Developer/To create  and upgrade C++ code 🟦9g</li>
-  <li>Алекс Мартинов Семерджиев - Developer/To create  and upgrade C++ code 🟩9v</li>
-  <li>Борис Житомиров Русинов - Developer/To create  and upgrade C++ code 🟩9v</li>
-  </ol>
+<h2 align = "left"> 👨‍👨‍👦‍👦Our Team👨‍👨‍👦‍👦</h2>
+Scrum trainer <a href =https://github.com/MSBarev22 >Милко Стоянов Барев </a> 🟦9g <br>
+Developer <a href =https://github.com/AMSemerdzhiev22 >Алекс Мартинов Семерджиев </a> 🟩9v <br>
+Developer <a href = https://github.com/SNRadev22>Станислав Недков Радев </a> 🟦9g <br>
+Developer <a href = https://github.com/BZRusinov22> Борис Житомиров Русинов </a> 🟩9v <br>
 
 ## 📎 Description
   
@@ -20,3 +18,17 @@ Our C++ code is made to test your knowledge of physics and science. It follows a
 2. Open the file in your local machine.
 3. Run the code with the f5 button.
 4. Select the category and the level that you want to play.
+
+<h2 align = "left"> Technologies used 💻</h2>
+<br>
+<p>
+ <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png" alt="VS code logo" width=48px/>
+    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111612.png" alt="GitHub logo" width = "50px"/>
+    <img src="https://img.icons8.com/color/344/microsoft-teams.png" alt = "MS Teams logo" width="50px" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/107px-ISO_C%2B%2B_Logo.svg.png" alt = "Cpp logo" with="50px" height="50px"/>
+    <img src="https://img.icons8.com/color/344/ms-word.png" alt="MS Word logo" width=48px />
+    <img src="https://img.icons8.com/color/344/ms-powerpoint.png" alt="MS PowerPoint logo" width=48px />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/1200px-Git_icon.svg.png" alt="Git logo" width=48px />
+ </p>
+<br>
+<hr>
