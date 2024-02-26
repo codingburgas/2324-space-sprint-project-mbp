@@ -603,7 +603,7 @@ void creditsScreen()
 	cout << setw(139) << "Stanislav Radev- Gamemode 1 programming" << endl;
 	cout << setw(139) << "Stanislav Radev- Gamemode 2 programming" << endl;
 	cout << setw(135) << "Milko Barev- Gamemode 3 programming" << endl;
-	cout << setw(137) << "Aleks Semerdzhiev- Upgrades development" << endl << endl;
+	cout << setw(139) << "Aleks Semerdzhiev- Upgrades development" << endl << endl;
 	cout << setw(128) << "UI DEVELOPMENT" << endl;
 	cout << setw(128) << "--------------" << endl;
 	cout << setw(130) << "Stanislav Radev" << endl << endl;
