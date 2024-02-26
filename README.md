@@ -24,10 +24,10 @@ Our C++ code is made to test your knowledge of physics and science. It follows a
 Apps used
 <ol>
   <li>
-    Teams
-    Visual studio
-    Word
-    Power Point
-    GitHub
+    <li>Teams
+    <li>Visual studio
+    <li>Word
+    <li>Power Point
+    <li>GitHub
   </li>
 </ol>
