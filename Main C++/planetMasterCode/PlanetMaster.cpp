@@ -590,6 +590,34 @@ void drawPlanetMaster() {
 	
 }
 
+void creditsScreen()
+{
+	int userChoice;
+	drawPlanetMaster();
+	cout << setw(125) << "GAME DESIGN" << endl;
+	cout << setw(125) << "-----------" << endl;
+	cout << setw(135) << "Milko Barev- UI and Graphic Design" << endl << endl;
+	cout << setw(130) << "GAME DEVELOPMENT" << endl;
+	cout << setw(130) << "----------------" << endl;
+	cout << setw(135) << "Milko Barev- Gamemode 1 programming" << endl;
+	cout << setw(139) << "Stanislav Radev- Gamemode 1 programming" << endl;
+	cout << setw(139) << "Stanislav Radev- Gamemode 2 programming" << endl;
+	cout << setw(135) << "Milko Barev- Gamemode 3 programming" << endl;
+	cout << setw(137) << "Aleks Semerdzhiev- Upgrades development" << endl << endl;
+	cout << setw(128) << "UI DEVELOPMENT" << endl;
+	cout << setw(128) << "--------------" << endl;
+	cout << setw(130) << "Stanislav Radev" << endl << endl;
+	cout << setw(136) << "DOCUMENTATION CREATION" << endl;
+	cout << setw(136) << "----------------------" << endl;
+	cout << setw(160) << "Boris Rusinov- Documentation, presentation and README. creation" << endl << endl << endl;
+	cout << setw(110) << "4.Back" << endl;
+	cin >> userChoice;
+	if (userChoice == 4)
+	{
+		mainMenu();
+	}
+}
+
 void mainMenu()
 {
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -598,9 +626,6 @@ void mainMenu()
 	int userChoice;
 	bool isChosenSuccessfullyMainMenu = false;
 	bool isChosenSuccessfullyPlay = false;
-	cout <<"                                                                                                                PLANET MASTER" << endl;
-	cout << "                                                                                                                _____________" << endl;
-	cout << endl;
 	cout << "                                                                                                           ______________________" << endl;
 	cout << "                                                                                                          |       1. Play       |" << endl;
 	cout << "                                                                                                           **********************" << endl;
@@ -639,6 +664,7 @@ void mainMenu()
 		else if (userChoice == 3)
 		{
 			isChosenSuccessfullyMainMenu = true;
+			creditsScreen();
 		}
 		else
 		{
