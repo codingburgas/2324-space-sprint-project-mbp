@@ -233,9 +233,9 @@ void planetOrderingLevel1(int level) {
 void planetOrderingLevel2(int level) {
 	if (level == 2) {
 		cout << "Put the planets in the correct order to gain access to the next level!" << endl;
-		cout << "Level 2: Chronos!" << endl;
+		cout << "Level 2: TRAPPIST-1!" << endl;
 		cout << "List of Planets:" << endl;
-		cout << "1.Elysium" << endl << "2.Celestia" << endl << "3.Nyx" << endl << "4.Verdantia" << endl << "5.Aetherius" << endl;
+		cout << "1." << endl << "2.Celestia" << endl << "3.Nyx" << endl << "4.Verdantia" << endl << "5.Aetherius" << endl;
 		cout << "6.Aether" << endl << "7.Chronos Secundus" << endl << "8.Aurora" << endl;
 	}
 	else {
@@ -435,6 +435,12 @@ void habitatFinderCustomLevel(int level)
 }
 
 void planetExpertMain() {
+	int usedPowerPoints;
+	int powerPoints = 100;
+	int BP = 0;
+	int upgradeBuy;
+	bool powerMaster= false;
+
 	cout << "Welcome! You are a scientist at CERN and you have been hired to find Higgs Bozons with the particle accelerator:" << endl << endl;
 	const int radius = 15;
 	for (int y = -radius; y <= radius; ++y) {
@@ -453,58 +459,61 @@ void planetExpertMain() {
 	cout << "You have been given 100 power points, you can use them to power the particle accelerator and find 1 Higgs Bozon (1 Bozon Point) for every 5 power points you use! You need 100 BP to win the game and become the planet expert!" << endl;
 	cout << "You can buy upgrades with BP in the upgrade store!" << endl;
 	cout << endl << endl;
-	cout << "Press '1' to use 5 power points and find 1 Higgs Bozon or '5' to go to the upgrades store:" << endl;
-}
-
-void planetExpertMainNoAcc() {
-	cout << "Press '1' to use 5 power points and find 1 Higgs Bozon or '5' to go to the upgrades store:" << endl;
-}
-
-void planetExpert(int level)
-{
-	int usedPowerPoints;
-	int powerPoints = 100;
-	int BP = 0;
-	if (level == 1) {
-		planetExpertMain();
-			cin >> usedPowerPoints;
-			if (BP != 100){
-						if (usedPowerPoints == 1) {
-							powerPoints = powerPoints - 5;
-							BP += 1;
-							cout << "You found 1 Higgs Bozon and your current balance is " << BP << " and " << powerPoints << " power points" << endl;
-
-						}
-						else if (usedPowerPoints == 10) {
-							powerPoints = powerPoints - 10;
-							BP += 2;
-							cout << "You found 2 Higgs Bozons and your current balance is " << BP << " and " << powerPoints << " power points" << endl;
-
-							planetExpertMainNoAcc();
-						}
-						else if (usedPowerPoints == 5) {
-							int upgradeBuy;
-							bool powerMaster;
-							cout << "Welcome to the upgrades store! You can buy the following upgrades (note that you have to buy them in the order they are put in)" << endl << endl;
-							cout << "1.Power master - you can now use 10 power points and get 2 BP (you also get 20 power points when you buy the upgrade)-cost:3 BP" << endl;
-							cout << "Choose which upgrade you want to buy by entering the corresponding number or enter 10 to go back to the play tab: " << endl;
-							cin >> upgradeBuy;
-							if (upgradeBuy == 1 && BP >= 3) {
-								BP = BP - 3;
-								powerMaster = true;
-								powerPoints += 20;
-								cout << "To use the power enter '10'" << endl;
-								planetExpertMainNoAcc();
-							}
-							else if (upgradeBuy == 10) {
-								planetExpertMainNoAcc();
-							}
-						}
-						planetExpertMain();
+	while (BP < 100)
+	{
+		cout << "Press '1' to use 5 power points and find 1 Higgs Bozon or use an upgrade if you have any (press'5' to go to the upgrades store):" << endl;
+		cin >> usedPowerPoints;
+			if (usedPowerPoints == 1) {
+				if (powerPoints > 5)
+				{
+					powerPoints = powerPoints - 5;
+					BP += 1;
+					cout << "You found 1 Higgs Bozon and your current balance is " << BP << " and " << powerPoints << " power points" << endl;
+				}
+				else
+				{
+					cout << "You don't have enough power points to do that!" << endl;
+				}
 			}
-		
+			else if (usedPowerPoints == 10) {
+				if (powerMaster == true)
+				{
+					if (powerPoints > 10)
+					{
+						powerPoints = powerPoints - 10;
+						BP += 2;
+						cout << "You found 2 Higgs Bozons and your current balance is " << BP << " and " << powerPoints << " power points" << endl;
+					}
+					else
+					{
+						cout << "You don't have enough power points to do that!" << endl;
+					}
+				}
+				else
+				{
+					cout << "You don't have this upgrade yet!(press'5' to go to the upgrades store)" << endl;
+				}
+			}
+			else if (usedPowerPoints == 5) {
+				cout << "Welcome to the upgrades store! You can buy the following upgrades (note that you have to buy them in the order they are put in)" << endl << endl;
+				cout << "1.Power master - you can now use 10 power points and get 2 BP (you also get 20 power points when you buy the upgrade)-cost:3 BP" << endl;
+				cout << "Choose which upgrade you want to buy by entering the corresponding number or enter 10 to go back to the play tab: " << endl;
+				cin >> upgradeBuy;
+				if (upgradeBuy == 1 && BP >= 3) {
+					BP = BP - 3;
+					powerMaster = true;
+					powerPoints += 20;
+					cout << "To use the power enter '10'" << endl;
+
+				}
+				else if (upgradeBuy == 10) {
+
+				}
+			}
+		}
+	cout << "Congratulations you are the planet expert!" << endl;
+	loseScreenFinal();
 	}
-}
 
 void chooseLevel(int level)
 {
@@ -522,7 +531,7 @@ void chooseLevel(int level)
 	}
 	else if (userChoiceGameModes == 3)
 	{
-		planetExpert(level);
+		planetExpertMain();
 	}
 }
 
