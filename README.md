@@ -24,10 +24,10 @@ Our C++ code is made to test your knowledge of physics and science. It follows a
 Apps used
 <ol>
   <li>
-    Teams![image](https://github.com/codingburgas/2324-space-sprint-project-mbp/assets/132456480/62f6e070-93ea-4d07-b0b8-e2d1a4a2edd3)
-    Visual studio![image](https://github.com/codingburgas/2324-space-sprint-project-mbp/assets/132456480/9c29afa4-3c82-450a-86b9-c3541de214e2)
-    Word![image](https://github.com/codingburgas/2324-space-sprint-project-mbp/assets/132456480/75c06743-9452-4266-a2a9-a75caab3ae57)
-    Power Point![image](https://github.com/codingburgas/2324-space-sprint-project-mbp/assets/132456480/8f470c8a-86ad-4b2e-bdc4-948cf77d4f0f)
-    GitHub![image](https://github.com/codingburgas/2324-space-sprint-project-mbp/assets/132456480/f12eee4c-c4bf-45d6-b169-2a2beef41fcc)
+    Teams
+    Visual studio
+    Word
+    Power Point
+    GitHub
   </li>
 </ol>
