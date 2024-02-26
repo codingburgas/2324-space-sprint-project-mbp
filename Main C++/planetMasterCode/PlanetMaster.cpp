@@ -5,7 +5,7 @@
 using namespace std;
 
 int level;
-int userChoiceGameModes;
+int userChoiceGameModes;//global variables
 
 void mainMenu();
 
@@ -19,7 +19,7 @@ void gameModeMenuLine()
 	}
 	cout << endl;
 }
-void gameModesMenu()
+void gameModesMenu()// the menu for choosing a game mode
 {
 	bool isChosenSuccessfullyGameMode = false;
 	bool isChosenSuccessfullyLevel = false;
@@ -128,7 +128,8 @@ void winScreenFinal();
 
 void loseScreenFinal();
 
-void sunSizeS() {
+void sunSizeS() // the function that draws the sun
+{
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(h,14);
 	cout << "       ";  
@@ -270,7 +271,7 @@ void planetOrderingLevel2(int level) {
 
 }
 
-void planetOrderingCustomLevel(int level)
+void planetOrderingCustomLevel(int level)//the custom level for game mode 1 
 {
 	if (level == 3) {
 		string levelGoal;
@@ -335,7 +336,7 @@ void planetOrderingCustomLevel(int level)
 	}
 }
 	
-void habitatFinderLevel1(int level)
+void habitatFinderLevel1(int level)//level 1 of game mode 2 
 {
 	if (level == 1) {
 		int answer;
@@ -561,7 +562,7 @@ void planetExpertMain() {
 	winScreenFinal();
 	}//the main body of the third game mode
 
-void chooseLevel(int level)
+void chooseLevel(int level)//function to determine the choice of the user 
 {
 	if (userChoiceGameModes == 1)
 	{
@@ -581,11 +582,12 @@ void chooseLevel(int level)
 	}
 }
 
-void drawPlanetMaster() {
+void drawPlanetMaster()//the function that draws the big logo
+{
 
 	cout << endl << endl << endl << endl << endl;
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleTextAttribute(h, 3);
+	SetConsoleTextAttribute(h, 3);//attribute for the color theme
 	
 		cout << "             ********************************************************************************************************************************************************************************************************" << endl;
 		cout << "             **        ******    ****************** ***********    ******   ******        ******            *****    *****    ************ ***********         ****            ******        *******          *******" << endl;
@@ -609,7 +611,7 @@ void drawPlanetMaster() {
 	
 }
 
-void creditsScreen()
+void creditsScreen()//the screen that gives credits to its creators
 {
 	int userChoice;
 	drawPlanetMaster();
@@ -637,7 +639,7 @@ void creditsScreen()
 	}
 }
 
-void mainMenu()
+void mainMenu()//the main menu of the app
 {
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(h, 7);
