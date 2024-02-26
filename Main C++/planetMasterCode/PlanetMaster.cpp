@@ -630,10 +630,7 @@ void mainMenu()
 	cout << "                                                                                                          |       1. Play       |" << endl;
 	cout << "                                                                                                           **********************" << endl;
 	cout << "                                                                                                           ______________________" << endl;
-	cout << "                                                                                                          |       2. Settings   |" << endl;
-	cout << "                                                                                                           **********************" << endl;
-	cout << "                                                                                                           ______________________" << endl;
-	cout << "                                                                                                          |       3. Credits    |" << endl;
+	cout << "                                                                                                          |       2. Credits    |" << endl;
 	cout << "                                                                                                           **********************" << endl;
 	cout << endl << endl;
 	cout << "                                                                                Choose what would you like to do by typing the corresponding number!" << endl;
@@ -658,10 +655,6 @@ void mainMenu()
 			}
 		}
 		else if (userChoice == 2)
-		{
-			isChosenSuccessfullyMainMenu = true;
-		}
-		else if (userChoice == 3)
 		{
 			isChosenSuccessfullyMainMenu = true;
 			creditsScreen();
