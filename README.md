@@ -4,7 +4,7 @@
 
 ## 👨‍👨‍👦‍👦Team Members👨‍👨‍👦‍👦
 <ol>
-<li>Милко Стоянов Барев - Scrum Trainer/Team Leader 🟦9g</li>
+  <li>Милко Стоянов Барев - Scrum Trainer/Team Leader 🟦9g</li>
   <li>Станислав Недков Радев - Developer/To create  and upgrade C++ code 🟦9g</li>
   <li>Алекс Мартинов Семерджиев - Developer/To create  and upgrade C++ code 🟩9v</li>
   <li>Борис Житомиров Русинов - Developer/To create  and upgrade C++ code 🟩9v</li>
@@ -23,11 +23,9 @@ Our C++ code is made to test your knowledge of physics and science. It follows a
 
 Apps used
 <ol>
-  <li>
     <li>Teams
     <li>Visual studio
     <li>Word
     <li>Power Point
     <li>GitHub
-  </li>
 </ol>
