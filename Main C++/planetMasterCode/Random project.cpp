@@ -176,6 +176,15 @@ bool answerPlanetOrderingLevel1(int answer1, int answer2, int answer3, int answe
 	}
 }
 
+bool answerPlanetOrderingLevel2(int answer1, int answer2, int answer3, int answer4, int answer5, int answer6, int answer7) {
+	if (answer1 != 4 || answer2 != 1 || answer3 != 7 || answer4 != 2 || answer5 != 6 || answer6 != 5 || answer7 != 3) {
+		return false;
+	}
+	else {
+		return true;
+	}
+}
+
 bool answerHabitatFinderLevel1(int answer) {
 	if (answer != 1) {
 		return false;
@@ -209,12 +218,12 @@ void planetOrderingLevel1(int level) {
 
 		sunSizeS();
 		cout << endl << endl;
-		int a, b, c, d, e, f, g, h;
-		cin >> a >> b >> c >> d >> e >> f >> g >> h;
+		int answer1, answer2, answer3, answer4, answer5, answer6, answer7, answer8;
+		cin >> answer1 >> answer2 >> answer3 >> answer4 >> answer5 >> answer6 >> answer7 >> answer8;
 		cout << endl << endl << endl << endl << endl << endl << endl;
 		
 
-		if (answerPlanetOrderingLevel1(a, b, c, d, e, f, g, h) == 0) {
+		if (answerPlanetOrderingLevel1(answer1, answer2, answer3, answer4, answer5, answer6, answer7, answer8) == 0) {
 			cout << endl;
 			cout << "Wrong answer! Try again!";
 			loseScreen();
@@ -233,10 +242,27 @@ void planetOrderingLevel1(int level) {
 void planetOrderingLevel2(int level) {
 	if (level == 2) {
 		cout << "Put the planets in the correct order to gain access to the next level!" << endl;
-		cout << "Level 2: TRAPPIST-1!" << endl;
+		cout << "Level 2: TRAPPIST-1!- Interesting fact: All of the system's planets are Earth-sized which gives scientists hope that some of them may be habitable." << endl;
 		cout << "List of Planets:" << endl;
-		cout << "1." << endl << "2.Celestia" << endl << "3.Nyx" << endl << "4.Verdantia" << endl << "5.Aetherius" << endl;
-		cout << "6.Aether" << endl << "7.Chronos Secundus" << endl << "8.Aurora" << endl;
+		cout << "1.TRAPPIST-1c" << endl << "2.TRAPPIST-1e" << endl << "3.TRAPPIST-1h" << endl << "4.TRAPPIST-1b" << endl << "5.TRAPPIST-1g" << endl;
+		cout << "6.TRAPPIST-1f" << endl << "7.TRAPPIST-1d" << endl;
+		cout << "Interesting fact: All of the exoplanets' names in one solar system come from their sun and the letters of the alphabet in alphabetic order." << endl;
+			
+		int answer1, answer2, answer3, answer4, answer5, answer6, answer7;
+		cin >> answer1 >> answer2 >> answer3 >> answer4 >> answer5 >> answer6 >> answer7;
+		cout << endl << endl << endl << endl << endl << endl << endl;
+
+		if (answerPlanetOrderingLevel2(answer1, answer2, answer3, answer4, answer5, answer6, answer7) == 0) {
+			cout << endl;
+			cout << "Wrong answer! Try again!";
+			loseScreen();
+			return;
+		}
+		else {
+			cout << endl;
+			cout << "Congrats! You may go to the next level!" << endl << endl;
+			winScreen();
+		}
 	}
 	else {
 		return;
