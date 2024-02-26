@@ -466,6 +466,7 @@ void planetExpertMain() {
 	int BP = 0;
 	int upgradeBuy;
 	bool powerMaster= false;
+	bool bozonGod = false;
 
 	cout << "Welcome! You are a scientist at CERN and you have been hired to find Higgs Bozons with the particle accelerator:" << endl << endl;
 	const int radius = 15;
@@ -501,10 +502,17 @@ void planetExpertMain() {
 					cout << "You don't have enough power points to do that!" << endl;
 				}
 			}
+			else if (usedPowerPoints == 2) {
+				powerPoints = powerPoints - 5;
+				BP += 2;
+				cout << "You found 2 Higgs Bozons and your current balance is " << BP << " BP" << " and " << powerPoints << " power points" << endl;
+			}
+	
 			
 			else if (usedPowerPoints == 5) {
 				cout << "Welcome to the upgrades store! You can buy the following upgrades (note that you have to buy them in the order they are put in)" << endl << endl;
 				cout << "1.Power master - you can now use 10 power points and get 2 BP (you also get 20 power points when you buy the upgrade)-cost:3 BP" << endl;
+				cout << "2.Bozon God    - you can now make double the BP you were making for the same amount of power points - cost: 7 BP" << endl << endl;
 				cout << "Choose which upgrade you want to buy by entering the corresponding number or enter 10 to go back to the play tab: " << endl;
 				cin >> upgradeBuy;
 				if (upgradeBuy == 1 && BP >= 3) {
@@ -512,6 +520,11 @@ void planetExpertMain() {
 					powerMaster = true;
 					powerPoints += 20;
 					cout << "To use the power enter '10'" << endl;
+				}
+				else if (upgradeBuy == 2 && BP >= 7 && powerMaster==true) {
+					BP = BP - 7;
+					bozonGod = true;
+					cout << "To use the power enter '2' or '12'" << endl;
 				}
 				else {
 					cout << "You don't have enough BP to buy this upgrade!" << endl;
@@ -537,10 +550,16 @@ void planetExpertMain() {
 					cout << "You don't have this upgrade yet!(press'5' to go to the upgrades store)" << endl;
 				}
 			}
+			else if (usedPowerPoints == 12) {
+				powerPoints = powerPoints - 10;
+				BP += 2;
+				cout << "You found  Higgs Bozons and your current balance is " << BP << " BP" << " and " << powerPoints << " power points" << endl;
+			}
+	
 		}
 	cout << "Congratulations you are the planet expert!" << endl;
-	loseScreenFinal();
-	}
+	winScreenFinal();
+	}//the main body of the third game mode
 
 void chooseLevel(int level)
 {
