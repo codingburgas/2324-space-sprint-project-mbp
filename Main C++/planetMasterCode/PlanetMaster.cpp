@@ -343,11 +343,11 @@ void habitatFinderLevel1(int level)
 		cout << "By analysing the following information choose the planet which is most likely to be habitabal!" << endl;
 		cout << "Level 1: Our solar system!" << endl;
 		cout << "List of Planets:" << endl;
-		cout << setw(30) << "1.MARS" << setw(100) << "2.VENUS" << setw(75) << "3.JUPITER" << endl;
-		cout << "INFORMATION: Mars is the fourth planet from the Sun " << setw(85) << "INFORMATION: Venus is the second planet from the Sun. Venus has" << setw(95) << "INFORMATION: Jupiter is a gas giant. It is the fifth planet from the Sun" << endl; 
-		cout << "in our solar system. It has a thin atmosphere composed " << setw(100) << " a thick atmosphere primarily composed of carbon dioxide with clouds of sulfuric acid." << setw(70) << " and has a predominantly hydrogen and helium atmosphere." << endl;
-		cout << "mostly of carbon dioxide. Mars is cold and dry, with " << setw(100) << "Its surface is extremely hot, with temperatures reaching up to 475 degrees Celsius." << setw(50) << "It has immense gravity" << endl;
-		cout << "temperatures averaging around -62 degrees Celsius. " << endl;
+		cout << setw(30) << "1.MARS" << setw(75) << "2.VENUS" << setw(80) << "3.JUPITER" << endl;
+		cout << "INFORMATION: Mars is the fourth planet from the Sun " << setw(80) << "INFORMATION: Venus is the second planet from the Sun. Venus has" << setw(60) << "INFORMATION: Jupiter is a gas giant. " << endl;
+		cout << "in our solar system. It has a thin atmosphere composed " << setw(69) << " a thick atmosphere primarily composed of carbon dioxide" << setw(91) << " It is the fifth planet from the Sun and has a predominantly " << endl;
+		cout << "mostly of carbon dioxide. Mars is cold and dry, with " << setw(75) << "with clouds of sulfuric acid.Its surface is extremely hot, " << setw(81) << "hydrogen and helium atmosphere. It has immense gravity" << endl;
+		cout << "temperatures averaging around -62 degrees Celsius. " << setw(71) << " with temperatures reaching up to 475 degrees Celsius." << endl;
 		cout << endl;
 		cin >> answer;
 
@@ -407,7 +407,7 @@ void habitatFinderCustomLevel(int level)
 		string levelName;
 		int numberOfPlanets;
 		string planets[50];
-		string planetsInformation[500];
+		string planetsInformation[50];
 		int correctAnswer;
 		int answer;
 		cout << "CUSTOM LEVEL" << endl;
