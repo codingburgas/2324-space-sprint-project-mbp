@@ -21,7 +21,7 @@ Our C++ code is made to test your knowledge of physics and science. It follows a
 <br>
 <p>
  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Visual_Studio_Icon_2022.svg/1200px-Visual_Studio_Icon_2022.svg.png" alt="VS  logo" width=48px/>
-    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111612.png" alt="GitHub logo" width = "50px"/>
+    <img src="https://img.icons8.com/nolan/64/github.png" alt="GitHub logo" width = "50px"/>
     <img src="https://img.icons8.com/color/344/microsoft-teams.png" alt = "MS Teams logo" width="50px" />
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/107px-ISO_C%2B%2B_Logo.svg.png" alt = "Cpp logo" with="50px" height="50px"/>
     <img src="https://img.icons8.com/color/344/ms-word.png" alt="MS Word logo" width=48px />
