@@ -4,12 +4,12 @@
 #include<Windows.h>
 using namespace std;
 
-int level;
-int userChoiceGameModes;//global variables
+char level;
+char userChoiceGameModes;//global variables
 
 void mainMenu();
 
-void chooseLevel(int level);
+void chooseLevel(char level);
 
 void gameModeMenuLine()
 {
@@ -63,7 +63,19 @@ void gameModesMenu()// the menu for choosing a game mode
 
 	while (isChosenSuccessfullyGameMode == false)
 	{
-		if (userChoiceGameModes == 1)
+		if (userChoiceGameModes == '1')
+		{
+			isChosenSuccessfullyGameMode = true;
+			while (isChosenSuccessfullyLevel == false)
+			{
+				cout << endl;
+				cout << "Enter the number of the desired level!" << endl;
+				cin >> level;
+				chooseLevel(level);
+				
+			}
+		}
+		else if (userChoiceGameModes == '2')
 		{
 			isChosenSuccessfullyGameMode = true;
 			while (isChosenSuccessfullyLevel == false)
@@ -77,7 +89,7 @@ void gameModesMenu()// the menu for choosing a game mode
 				}
 			}
 		}
-		else if (userChoiceGameModes == 2)
+		else if (userChoiceGameModes == '3')
 		{
 			isChosenSuccessfullyGameMode = true;
 			while (isChosenSuccessfullyLevel == false)
@@ -86,26 +98,10 @@ void gameModesMenu()// the menu for choosing a game mode
 				cout << "Enter the number of the desired level!" << endl;
 				cin >> level;
 				chooseLevel(level);
-				if (level < 1 || level>10) {
-					cout << "Enter a number between 1 and 10!" << endl;
-				}
+				
 			}
 		}
-		else if (userChoiceGameModes == 3)
-		{
-			isChosenSuccessfullyGameMode = true;
-			while (isChosenSuccessfullyLevel == false)
-			{
-				cout << endl;
-				cout << "Enter the number of the desired level!" << endl;
-				cin >> level;
-				chooseLevel(level);
-				if (level < 1 || level>10) {
-					cout << "Enter a number between 1 and 10!" << endl;
-				}
-			}
-		}
-		else if (userChoiceGameModes == 4)
+		else if (userChoiceGameModes == '4')
 		{
 			isChosenSuccessfullyGameMode = true;
 			mainMenu();
@@ -204,10 +200,10 @@ bool answerHabitatFinderLevel2(int answer) {
 	}
 }
 
-void planetOrderingLevel1(int level) {
+void planetOrderingLevel1(char level) {
 	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(h, 7);
-	if (level == 1) {
+	if (level == '1') {
 
 
 		cout << "Put the planets in the correct order to gain access to the next level!" << endl;
@@ -240,8 +236,8 @@ void planetOrderingLevel1(int level) {
 		return;
 	}
 }
-void planetOrderingLevel2(int level) {
-	if (level == 2) {
+void planetOrderingLevel2(char level) {
+	if (level == '2') {
 		cout << "Put the planets in the correct order to gain access to the next level!" << endl;
 		cout << "Level 2: TRAPPIST-1!- Interesting fact: All of the system's planets are Earth-sized which gives scientists hope that some of them may be habitable." << endl;
 		cout << "List of Planets:" << endl;
@@ -271,9 +267,11 @@ void planetOrderingLevel2(int level) {
 
 }
 
-void planetOrderingCustomLevel(int level)//the custom level for game mode 1 
+void planetOrderingCustomLevel(char level)//the custom level for game mode 1 
 {
-	if (level == 3) {
+	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(h, 7);
+	if (level == '3') {
 		string levelGoal;
 		string levelName;
 		int numberOfPlanets;
@@ -336,9 +334,9 @@ void planetOrderingCustomLevel(int level)//the custom level for game mode 1
 	}
 }
 	
-void habitatFinderLevel1(int level)//level 1 of game mode 2 
+void habitatFinderLevel1(char level)//level 1 of game mode 2 
 {
-	if (level == 1) {
+	if (level == '1') {
 		int answer;
 
 		cout << "By analysing the following information choose the planet which is most likely to be habitabal!" << endl;
@@ -369,9 +367,9 @@ void habitatFinderLevel1(int level)//level 1 of game mode 2
 	}
 }
 
-void habitatFinderLevel2(int level)
+void habitatFinderLevel2(char level)
 {
-	if (level == 2) {
+	if (level == '2') {
 		int answer;
 
 		cout << "By analysing the following information choose the planet which is most likely to be habitabal!" << endl;
@@ -401,9 +399,9 @@ void habitatFinderLevel2(int level)
 	}
 }
 
-void habitatFinderCustomLevel(int level)
+void habitatFinderCustomLevel(char level)
 {
-	if (level == 3) {
+	if (level == '3') {
 		string levelGoal;
 		string levelName;
 		int numberOfPlanets;
@@ -562,21 +560,21 @@ void planetExpertMain() {
 	winScreenFinal();
 	}//the main body of the third game mode
 
-void chooseLevel(int level)//function to determine the choice of the user 
+void chooseLevel(char level)//function to determine the choice of the user 
 {
-	if (userChoiceGameModes == 1)
+	if (userChoiceGameModes =='1')
 	{
 		planetOrderingLevel1(level);
 		planetOrderingLevel2(level);
 		planetOrderingCustomLevel(level);
 	}
-	else if(userChoiceGameModes == 2)
+	else if(userChoiceGameModes == '2')
 	{
 		habitatFinderLevel1(level);
 		habitatFinderLevel2(level);
 		habitatFinderCustomLevel(level);
 	}
-	else if (userChoiceGameModes == 3)
+	else if (userChoiceGameModes == '3')
 	{
 		planetExpertMain();
 	}

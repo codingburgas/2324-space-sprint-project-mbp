@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jitom\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u0438\\2324-space-sprint-project-mbp\\Main C\u002B\u002B\\planetMasterCode\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{41926976-9B0C-487F-8505-6AD05606069E}|planetMaster.vcxproj|C:\\Users\\jitom\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u0438\\2324-space-sprint-project-mbp\\Main C\u002B\u002B\\planetMasterCode\\PlanetMaster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{41926976-9B0C-487F-8505-6AD05606069E}|planetMaster.vcxproj|solutionrelative:PlanetMaster.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PlanetMaster.cpp",
+              "DocumentMoniker": "C:\\Users\\jitom\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u0438\\2324-space-sprint-project-mbp\\Main C\u002B\u002B\\planetMasterCode\\PlanetMaster.cpp",
+              "RelativeDocumentMoniker": "PlanetMaster.cpp",
+              "ToolTip": "C:\\Users\\jitom\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u0438\\2324-space-sprint-project-mbp\\Main C\u002B\u002B\\planetMasterCode\\PlanetMaster.cpp",
+              "RelativeToolTip": "PlanetMaster.cpp",
+              "ViewState": "AQIAABkBAAAAAAAAAAAAAMkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-02-29T06:33:51.608Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
